@@ -15,6 +15,9 @@
 #import "IndexViewController.h"
 #import "RemindViewController.h"
 
+
+#define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
+
 @interface CarInfoListViewController ()
 
 @end
@@ -42,11 +45,11 @@
 	leftButton.frame = CGRectMake(5,6, 50, 30);
 	[leftButton setTitle:@"返回" forState:UIControlStateNormal];
 	leftButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
-    leftButton.titleLabel.textColor = [UIColor whiteColor];
+    leftButton.titleLabel.textColor = [UIColor blackColor];
     leftButton.titleLabel.shadowOffset = CGSizeMake(-1.0f, 2.0f);
     leftButton.titleLabel.shadowColor = [UIColor blackColor];
 	[leftButton setTitleEdgeInsets:UIEdgeInsetsMake(5, 10, 5, 5)];
-	[leftButton setBackgroundImage:[UIImage imageNamed:@"btn_back.png"] forState:UIControlStateNormal];
+	[leftButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
 	[leftButton addTarget:self action:@selector(backTopage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:leftButton];
     ////////////////////////////////////////////////////////////////////
@@ -132,11 +135,20 @@
 }
 // 请求结束，获取 Response 数据
 -(void)requestDone:(ASIHTTPRequest*)request{
-    NSLog(@"response\n%@",[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding]);
+    NSLog(@"~~response\n%@",[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding]);
     NSString* requestStr = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
     NSDictionary* requests = [requestStr objectFromJSONString];
     NSLog(@"%@",[request class]);//JKDictionary
-    
+            if (![[[[requests objectForKey:@"root"] objectForKey:@"head"]objectForKey:@"message"] isEqualToString:@"Success"]) {
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"您所查询的信息有误" message:nil delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+               NSMutableArray * carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
+                [carMutableArray removeLastObject];
+                [carMutableArray writeToFile:CARLISTFILEPATH atomically:YES];
+                
+                
+        }
 
     //做逻辑处理
     if(([requests objectForKey:@"root"] != NULL)&&([[requests objectForKey:@"root"] objectForKey:@"VehSurveilInfo"] != NULL)){
@@ -151,6 +163,7 @@
 
    
     self.data = carArrays;
+
     
     /////////////////////////////////////////
     //总共罚款数//这个地方数据不对
@@ -175,10 +188,16 @@
 // 请求失败，获取 error
 -(void)requestWentWrong:(ASIHTTPRequest*)request{
     NSError* error = [request error];
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"数据加载失败" message:@"请检查网络连接" delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
     NSLog(@"%@", error.userInfo);
 }
 
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self backTopage];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -242,7 +261,8 @@
         if([FirstNumberStr isEqualToString:tempStr])
         {
             
-//            n = [carInfo setlablefont:carInfo.whyLabel gettext:[[self.weifaArr objectAtIndex:i] objectForKey:@"wfms"]];
+            n = [carInfo setlablefont:carInfo.whyLabel gettext:[[self.weifaArr objectAtIndex:i] objectForKey:@"wfms"]];
+            NSLog(@"~~`%f",n);
 //            carInfo.fakuanLabel.center=CGPointMake(carInfo.fakuanLabel.center.x, carInfo.fakuanLabel.center.y+n);
 
             carInfo.whyLabel.text = [[self.weifaArr objectAtIndex:i] objectForKey:@"wfms"];
@@ -283,7 +303,17 @@
     carInfo.whenLabel.text = wfsj;    
     NSString* wfdz = [dic1 objectForKey:@"wfdz"];//违法地点
     carInfo.whereLabel.text = wfdz;
-    
+    if (n>0.0) {
+        for (int i=3; i<=10; i++) {
+        UILabel *view=(UILabel *)[carInfo viewWithTag:i];
+        view.center=CGPointMake(view.center.x, view.center.y+n+4);
+    }
+
+
+    }
+        UILabel *view1=(UILabel *)[carInfo viewWithTag:2];
+        view1.center=CGPointMake(view1.center.x, view1.center.y+4);
+
     carInfo.frame = CGRectMake(0, 0, carInfo.frame.size.width, carInfo.frame.size.height+n);
     return carInfo;
 }

@@ -15,6 +15,7 @@
 #define NavbgHight  46
 #define PLACECARNUMBER @"请输入车牌号码"
 #define PLACECARJA     @"请输入车驾号码"
+#define NUMBERS @"0123456789\n"
 
 @class CarViewController;
 @class CarInfoListViewController;

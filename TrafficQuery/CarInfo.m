@@ -33,7 +33,7 @@
     float m,n;
     UIFont *font;
     
-    font = [UIFont fontWithName:@"Arial" size:13.0f];
+    font = [UIFont fontWithName:@"Arial" size:14.0f];
     
     //设定宽度，高度无限高
     CGSize constraintSize = CGSizeMake(180.0f, MAXFLOAT);
@@ -45,7 +45,7 @@
     label.frame=rect;
     n=label.frame.size.height;
     NSLog(@"%f",n);
-    label.font = font;
+    //'label.font = font;
     label.text = text;
     return n-m;
 }

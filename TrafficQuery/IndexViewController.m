@@ -162,8 +162,6 @@
     [aboutUSButton release];
     [imageview release];
     [self.view addSubview:rightView];
-    
-    
     [self initMainTableView];
 }
 -(void)initMainTableView{
