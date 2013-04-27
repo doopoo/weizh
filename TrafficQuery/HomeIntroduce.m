@@ -79,7 +79,7 @@
     
     
     
-    UIButton *remindButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 69, 120, 70)];
+    UIButton *remindButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 68, 120, 72)];
     [remindButton setTitle:@"提醒设置" forState:UIControlStateNormal];
     [remindButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     remindButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -106,7 +106,7 @@
     [userInfView release];
     [userInfButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-139, 120, 70)];
+    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-139, 120, 71)];
     [shareButton setTitle:@"分享朋友" forState:UIControlStateNormal];
     [shareButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     shareButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;

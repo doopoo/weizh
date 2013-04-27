@@ -1701,7 +1701,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: LU PING (8DC79727C8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: dan yu (62ZC34F672)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dan yu (62ZC34F672)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1717,7 +1718,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6B5D17EB-C91F-41A6-9406-8B4205896A5B";
+				PROVISIONING_PROFILE = "7D8FC2C0-1B47-48B7-86E5-1E4EBDC8ACEA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F4F7002-EEE2-483A-A5FA-9AC78B98AF3E";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1734,7 +1736,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: LU PING (8DC79727C8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: dan yu (62ZC34F672)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dan yu (62ZC34F672)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1743,7 +1746,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6B5D17EB-C91F-41A6-9406-8B4205896A5B";
+				PROVISIONING_PROFILE = "7D8FC2C0-1B47-48B7-86E5-1E4EBDC8ACEA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F4F7002-EEE2-483A-A5FA-9AC78B98AF3E";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1756,7 +1760,8 @@
 					armv6,
 					armv7,
 				);
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dan yu (62ZC34F672)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: dan yu (62ZC34F672)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficQuery/TrafficQuery-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1767,7 +1772,8 @@
 					"\"$(SRCROOT)/TrafficQuery\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CD1B272D-6832-4087-8298-766E530DF468";
+				PROVISIONING_PROFILE = "7D8FC2C0-1B47-48B7-86E5-1E4EBDC8ACEA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1780,7 +1786,8 @@
 					armv6,
 					armv7,
 				);
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: dan yu (62ZC34F672)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: dan yu (62ZC34F672)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficQuery/TrafficQuery-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1791,7 +1798,8 @@
 					"\"$(SRCROOT)/TrafficQuery\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CD1B272D-6832-4087-8298-766E530DF468";
+				PROVISIONING_PROFILE = "7D8FC2C0-1B47-48B7-86E5-1E4EBDC8ACEA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
