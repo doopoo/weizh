@@ -27,8 +27,8 @@
 {
     [super viewDidLoad];
     UIImageView *topView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"top_panal_background.png"]];
-    [topView setFrame:CGRectMake(0, 0, 320, 60)];
-    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 8, 70, 40)];
+    [topView setFrame:CGRectMake(0, 0, 320, 50)];
+    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(5, 6, 50, 30)];
     [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [backButton setBackgroundImage:[UIImage imageNamed:@"btn_back.png"] forState:UIControlStateNormal];
     [backButton setBackgroundImage:[UIImage imageNamed:@"btn_back_s.png"] forState:UIControlStateSelected];

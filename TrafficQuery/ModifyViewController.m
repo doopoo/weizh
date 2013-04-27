@@ -8,6 +8,7 @@
 
 #import "ModifyViewController.h"
 #import "CarViewController.h"
+#import "carCommon.h"
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
 @interface ModifyViewController ()
@@ -72,30 +73,33 @@
 //[self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
 -(IBAction)saveChange:(UIButton *)sender{
     int num = [self.carMutableArray count];
-    /*
-    for(int i = 0; i < num; i++){
+    for(int i = 0; i < num; i++)
+    {
         NSString* tempCarNum = [[[self.carMutableArray objectAtIndex:i] objectForKey :@"carNum"] uppercaseString];
         NSMutableString* yu = [NSMutableString stringWithFormat:@"豫"];
         [yu appendString:tempCarNum];
         NSLog(@"carPaiStr = %@", carPaiStr);
         NSLog(@"yu = %@", yu);
-        if([carPaiStr isEqualToString:yu]){//写入数据库中
-            NSLog(@"调用了");
-            [[self.carMutableArray objectAtIndex:i] setValue:self.carPaiTextField.text forKey:@"carNum"];
-            [[self.carMutableArray objectAtIndex:i] setValue:self.carJiaTextField.text forKey:@"carJiaNum"];
-            [[self.carMutableArray objectAtIndex:i] setValue:self.carNameLabel.text forKey:@"carImage"];
-            [[self.carMutableArray objectAtIndex:i] setValue:self.carImageStr forKey:@"carImagenum"];
-            [[self.carMutableArray objectAtIndex:i] writeToFile:CARLISTFILEPATH atomically:YES];
-//            break;
-            
+        NSLog(@"self.carImageStr = %@",self.carImageStr);
+        if([carPaiStr isEqualToString:yu])
+        {//写入数据库中
+            NSLog(@"self.carImageStr = %@",self.carImageStr);
+            NSLog(@"self.carNameLabel.text = %@",self.carNameLabel.text);
+            NSDictionary* carDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                     [self.carPaiTextField.text substringFromIndex:1],@"carNum",
+                                     self.carJiaTextField.text, @"carJiaNum",
+                                     self.carImageStr,@"carImageNum",// 这个是数字
+                                     self.carNameLabel.text, @"carImage", nil];//这个是文本
+
+            //替换
+            [self.carMutableArray replaceObjectAtIndex:i withObject:carDict];
+            [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
+            myCarCommon = [[carCommon alloc] initWithNibName:@"carCommon" bundle:nil];
+            [myCarCommon.mainTableView reloadData];
+            [self.navigationController pushViewController:myCarCommon animated:YES];
         }
         
-    }
-    [self.navigationController popViewControllerAnimated:YES];
-    */
-    
-    
-    
+    }    
 }
 
 

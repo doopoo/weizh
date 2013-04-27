@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @class CarViewController;
+@class carCommon;
 
 @interface ModifyViewController : UIViewController{
+    carCommon* myCarCommon;
     CarViewController* carViewController;
     UILabel* carNameLabel;
     UITextField* carPaiTextField;
@@ -25,7 +27,7 @@
 }
 @property(nonatomic, assign)NSString* carPaiStr;
 @property(nonatomic, assign)NSString* carJiaStr;
-@property(nonatomic, assign)NSString* carImageStr;
+@property(nonatomic, retain)NSString* carImageStr;
 @property(nonatomic, assign)NSString* carNameStr;
 @property(nonatomic, retain)IBOutlet UILabel* carNameLabel;
 @property(nonatomic, retain)IBOutlet UITextField* carPaiTextField;

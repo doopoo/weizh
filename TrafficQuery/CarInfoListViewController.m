@@ -39,14 +39,14 @@
    
     [super viewDidLoad];
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	leftButton.frame = CGRectMake(5,8, 50, 30);
+	leftButton.frame = CGRectMake(5,6, 50, 30);
 	[leftButton setTitle:@"返回" forState:UIControlStateNormal];
 	leftButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
     leftButton.titleLabel.textColor = [UIColor whiteColor];
     leftButton.titleLabel.shadowOffset = CGSizeMake(-1.0f, 2.0f);
     leftButton.titleLabel.shadowColor = [UIColor blackColor];
 	[leftButton setTitleEdgeInsets:UIEdgeInsetsMake(5, 10, 5, 5)];
-	[leftButton setBackgroundImage:[UIImage imageNamed:@"btn_setting.png"] forState:UIControlStateNormal];
+	[leftButton setBackgroundImage:[UIImage imageNamed:@"btn_back.png"] forState:UIControlStateNormal];
 	[leftButton addTarget:self action:@selector(backTopage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:leftButton];
     ////////////////////////////////////////////////////////////////////

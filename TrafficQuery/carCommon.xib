@@ -166,7 +166,7 @@
 					<object class="IBUIButton" id="1066443289">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{10, 8}, {50, 30}}</string>
+						<string key="NSFrame">{{5, 6}, {50, 30}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="474766296"/>
@@ -175,7 +175,6 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUINormalTitle">返回</string>
 						<reference key="IBUIHighlightedTitleColor" ref="232955109"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -184,7 +183,7 @@
 						<reference key="IBUINormalTitleShadowColor" ref="831782332"/>
 						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">back_btn_a.png</string>
+							<string key="NSResourceName">btn_back.png</string>
 						</object>
 						<reference key="IBUIFontDescription" ref="623648605"/>
 						<reference key="IBUIFont" ref="620978927"/>
@@ -296,11 +295,11 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="124135867"/>
-							<reference ref="1066443289"/>
 							<reference ref="474766296"/>
 							<reference ref="59537691"/>
 							<reference ref="142646436"/>
 							<reference ref="298164981"/>
+							<reference ref="1066443289"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -412,7 +411,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="all_bg.png">{640, 813}</string>
-			<string key="back_btn_a.png">{99, 61}</string>
+			<string key="btn_back.png">{75, 47}</string>
 			<string key="btn_normal.png">{600, 90}</string>
 			<string key="top_panal_background.png">{640, 107}</string>
 		</dictionary>
