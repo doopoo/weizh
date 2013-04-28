@@ -9,7 +9,7 @@
 #import "RemindViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
-#import "remindCell.h"
+
 #import "JSONKit.h"
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
@@ -30,6 +30,35 @@
         // Custom initialization
     }
     return self;
+}
+-(IBAction)remind:(UIButton *)sender
+{
+    int m;
+    UIButton* myBtn = (UIButton*)sender;
+    m=myBtn.tag;
+    NSLog(@"%i~~%i",m,n);
+
+
+    for (int j=0; j<=n; j++) {
+        UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
+        NSLog(@"~!%@",myBtn1);
+        myBtn1.selected = NO;
+    }
+    
+    [myBtn setBackgroundColor:[UIColor clearColor]];
+    [myBtn setImage:[UIImage imageNamed:@"guan.png"] forState:UIControlStateNormal];
+    [myBtn setImage:[UIImage imageNamed:@"kai.png"] forState:UIControlStateSelected];
+    [self touchEvent:myBtn];
+}
+-(void)touchEvent:(id)sender{
+    UIButton* button = (UIButton*)sender;
+    button.selected = !button.selected;
+    if(button.imageView.image == [UIImage imageNamed:@"kai.png"]){
+        NSLog(@"开着呢");
+    }
+    if(isON == NO){
+        isON = YES;
+    }
 }
 
 - (void)viewDidLoad
@@ -68,7 +97,7 @@
         //tempCarJiaStr = [self.carDictionary objectForKey:@"carJiaNum"];
        
         
- //   NSInteger row=[indexPath row];
+    NSInteger row=[indexPath row];
     
         //转成大写 并加上 豫字
         NSLog(@"tempCarNumStr = %@",tempCarNumStr);
@@ -80,8 +109,11 @@
         tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
         ((remindCell*)cell).carImageView.image = [UIImage imageNamed:tempImageStr];
         ((remindCell*)cell).remindViewControllerDelegate = self;
-       // ((remindCell*)cell).kaiguan.tag=row;
-        //NSLog(@"%i",row);
+        ((remindCell*)cell).kaiguan.tag=row+100;
+    ((remindCell*)cell).kaiguan.selected=NO;
+    n=row;
+    ((remindCell*)cell).delegate=self;
+        NSLog(@"%i",row);
         cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_more_item_middle.png"]];
         
         
