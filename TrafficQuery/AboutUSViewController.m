@@ -32,10 +32,6 @@
     [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_b.png"] forState:UIControlStateSelected];
-<<<<<<< HEAD
-    [backButton setTitle:@"返回" forState:UIControlStateNormal];
-=======
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [backButton setTitle:@"返回" forState:UIControlStateNormal];
     UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(140, 8, 120, 40)];

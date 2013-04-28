@@ -216,13 +216,8 @@
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
 						<object class="NSColor" key="IBUINormalTitleColor">
-<<<<<<< HEAD
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC4wMTc5NzM4NTYyMQA</bytes>
-=======
-							<int key="NSColorSpace">2</int>
-							<bytes key="NSRGB">MC4wODIzNTI5NDM3MiAwLjA1ODgyMzUzMzM2IDAuMDE5NjA3ODQzODMAA</bytes>
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 						</object>
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="961359890">
 							<int key="NSColorSpace">3</int>

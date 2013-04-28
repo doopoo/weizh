@@ -15,10 +15,7 @@
 #import "IndexViewController.h"
 #import "RemindViewController.h"
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
 @interface CarInfoListViewController ()
@@ -53,13 +50,10 @@
     leftButton.titleLabel.textColor = [UIColor blackColor];
     leftButton.titleLabel.shadowOffset = CGSizeMake(-1.0f, 2.0f);
     leftButton.titleLabel.shadowColor = [UIColor blackColor];
-<<<<<<< HEAD
+
 	[leftButton setTitleEdgeInsets:UIEdgeInsetsMake(5, 10, 5, 5)];*/
-	[leftButton setBackgroundImage:[UIImage imageNamed:@"btn_back.png"] forState:UIControlStateNormal];
-=======
-	[leftButton setTitleEdgeInsets:UIEdgeInsetsMake(5, 10, 5, 5)];
 	[leftButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
+
 	[leftButton addTarget:self action:@selector(backTopage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:leftButton];
     ////////////////////////////////////////////////////////////////////

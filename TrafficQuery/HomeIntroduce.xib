@@ -118,11 +118,7 @@
 						</object>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">2</int>
-<<<<<<< HEAD
 							<bytes key="NSRGB">MC4xOTYwNzg0NDk1IDAuNDAzOTIxNjA0MiAwLjU4NDMxMzc1MDMAA</bytes>
-=======
-							<bytes key="NSRGB">MC4xMzcyNTQ5MDg3IDAuMDc4NDMxMzc1MzIgMC4wMzEzNzI1NTA4NwA</bytes>
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 						</object>
 						<object class="NSColor" key="IBUINormalTitleShadowColor">
 							<int key="NSColorSpace">3</int>

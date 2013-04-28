@@ -582,11 +582,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-<<<<<<< HEAD
 			<int key="maxID">23</int>
-=======
-			<int key="maxID">22</int>
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -110,11 +110,7 @@
     [userInfView release];
     [userInfButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     
-<<<<<<< HEAD
     UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, screenHeight-158, 120, 70)];
-=======
-    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-139, 120, 71)];
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
     [shareButton setTitle:@"分享朋友" forState:UIControlStateNormal];
     [shareButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     shareButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -197,15 +193,8 @@
     //[homeBg addSubview:bgCarSelect];
     //[self.view addSubview:bgCarSelect];
     
-    
-<<<<<<< HEAD
-    /*
-=======
-    
     carJaField.delegate=self;
     carNumberField.delegate=self;
-    
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
     UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [selectCarBtn addTarget:self action:@selector(selectCar:) forControlEvents:UIControlEventTouchUpInside];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"ic_arrow.png"] forState:UIControlStateNormal];
@@ -224,14 +213,7 @@
     iconImageView.image = [UIImage imageNamed:iconNumStr];
     [bgCarSelect addSubview:iconImageView];
    // [iconImageView release];
-<<<<<<< HEAD
-    */
-    
-    carJaField.delegate=self;
-    carNumberField.delegate=self;
-=======
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
-    ///////////////////////////////////////
+
     UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     //[selectCarBtn addTarget:self action:@selector(changebgdown:) forControlEvents:UIControlEventTouchDown];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"ic_more_item_default.png"] forState:UIControlStateNormal];
@@ -730,10 +712,5 @@ int xContentOffsetLastTime = 0;
 //    [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:230.0f] waitUntilDone:NO];
 //    return YES;
 //}
-<<<<<<< HEAD
-//
-=======
-
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 
 @end

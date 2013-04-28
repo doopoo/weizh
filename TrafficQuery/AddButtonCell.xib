@@ -191,14 +191,11 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-<<<<<<< HEAD
-		<string key="IBCocoaTouchPluginVersion">1930</string>
-=======
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">btn_normal.png</string>
 			<string key="NS.object.0">{600, 90}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
+
 	</data>
 </archive>
