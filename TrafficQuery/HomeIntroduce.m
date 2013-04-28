@@ -202,11 +202,11 @@
     [bgCarSelect addSubview:selectCarBtn];
     //selectCarBtn.userInteractionEnabled = YES;
     //[bgCarSelect release];
-    */
+    
     
     //image icon
     //这个地方进行修改
-    /*
+    
     CGRect iconImageFrame = CGRectMake(5, 10, 80, 60);
     iconImageView = [[UIImageView alloc] initWithFrame:iconImageFrame];
     iconNumStr = @"23.jpg";
@@ -214,7 +214,7 @@
     [bgCarSelect addSubview:iconImageView];
    // [iconImageView release];
 
-    UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+   // UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     //[selectCarBtn addTarget:self action:@selector(changebgdown:) forControlEvents:UIControlEventTouchDown];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"ic_more_item_default.png"] forState:UIControlStateNormal];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"set_middle_p.png"] forState:UIControlStateHighlighted];
@@ -625,7 +625,7 @@ int xContentOffsetLastTime = 0;
         pageControl.currentPage = curPage;
     }
 }
-
+/*
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 {
     
@@ -655,7 +655,7 @@ int xContentOffsetLastTime = 0;
     [self parentViewController];
     return YES;
 }
-
+*/
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 //{

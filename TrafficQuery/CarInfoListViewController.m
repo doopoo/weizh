@@ -44,15 +44,16 @@
     [super viewDidLoad];
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
 	leftButton.frame = CGRectMake(5,6, 50, 30);
-    /*
+   
 	[leftButton setTitle:@"返回" forState:UIControlStateNormal];
 	leftButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
     leftButton.titleLabel.textColor = [UIColor blackColor];
     leftButton.titleLabel.shadowOffset = CGSizeMake(-1.0f, 2.0f);
     leftButton.titleLabel.shadowColor = [UIColor blackColor];
-
+ /*
 	[leftButton setTitleEdgeInsets:UIEdgeInsetsMake(5, 10, 5, 5)];*/
 	[leftButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
+    
 
 	[leftButton addTarget:self action:@selector(backTopage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:leftButton];
@@ -130,7 +131,7 @@
     NSLog(@"~~response\n%@",[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding]);
     NSString* requestStr = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
     NSDictionary* requests = [requestStr objectFromJSONString];
-<<<<<<< HEAD
+
     NSLog(@"requestClass = %@",[requests class]);//JKDictionary
     
     
@@ -144,8 +145,6 @@
         
         
     }
-    
-=======
     NSLog(@"%@",[request class]);//JKDictionary
             if (![[[[requests objectForKey:@"root"] objectForKey:@"head"]objectForKey:@"message"] isEqualToString:@"Success"]) {
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"您所查询的信息有误" message:nil delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
@@ -157,7 +156,7 @@
                 
                 
         }
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
+
 
     //做逻辑处理
     if(([requests objectForKey:@"root"] != NULL)&&([[requests objectForKey:@"root"] objectForKey:@"VehSurveilInfo"] != NULL))
@@ -275,11 +274,11 @@
     [self backTopage];
 }
 
-
+/*
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     [self backTopage];
-}
+}*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -379,10 +378,6 @@
         {
             
             n = [carInfo setlablefont:carInfo.whyLabel gettext:[[self.weifaArr objectAtIndex:i] objectForKey:@"wfms"]];
-<<<<<<< HEAD
-=======
-            NSLog(@"~~`%f",n);
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 //            carInfo.fakuanLabel.center=CGPointMake(carInfo.fakuanLabel.center.x, carInfo.fakuanLabel.center.y+n);
 
             carInfo.whyLabel.text = [[self.weifaArr objectAtIndex:i] objectForKey:@"wfms"];
@@ -424,21 +419,10 @@
     carInfo.whenLabel.text = wfsj;    
     NSString* wfdz = [dic1 objectForKey:@"wfdz"];//违法地点
     carInfo.whereLabel.text = wfdz;
-<<<<<<< HEAD
     }
-    if (n>0.0) {
-        UILabel *lable2=(UILabel *)[carInfo viewWithTag:2];
-                lable2.center=CGPointMake(lable2.center.x, lable2.center.y-7);
-            for (int i=3; i<=10; i++) {
-        UILabel *lable=(UILabel *)[carInfo viewWithTag:i];
-        lable.center=CGPointMake(lable.center.x, lable.center.y+n);
-                
-                
-    }
-    }
-    UILabel *lable1=(UILabel *)[carInfo viewWithTag:2];
-    lable1.center=CGPointMake(lable1.center.x, lable1.center.y+4);
-=======
+
+
+
     if (n>0.0) {
         for (int i=3; i<=10; i++) {
         UILabel *view=(UILabel *)[carInfo viewWithTag:i];
@@ -449,7 +433,6 @@
     }
         UILabel *view1=(UILabel *)[carInfo viewWithTag:2];
         view1.center=CGPointMake(view1.center.x, view1.center.y+4);
->>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 
     carInfo.frame = CGRectMake(0, 0, carInfo.frame.size.width, carInfo.frame.size.height+n);
     return carInfo;
