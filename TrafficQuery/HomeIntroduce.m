@@ -110,7 +110,11 @@
     [userInfView release];
     [userInfButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     
+<<<<<<< HEAD
     UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, screenHeight-158, 120, 70)];
+=======
+    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-139, 120, 71)];
+>>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
     [shareButton setTitle:@"分享朋友" forState:UIControlStateNormal];
     [shareButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     shareButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -194,7 +198,14 @@
     //[self.view addSubview:bgCarSelect];
     
     
+<<<<<<< HEAD
     /*
+=======
+    
+    carJaField.delegate=self;
+    carNumberField.delegate=self;
+    
+>>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
     UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [selectCarBtn addTarget:self action:@selector(selectCar:) forControlEvents:UIControlEventTouchUpInside];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"ic_arrow.png"] forState:UIControlStateNormal];
@@ -213,10 +224,13 @@
     iconImageView.image = [UIImage imageNamed:iconNumStr];
     [bgCarSelect addSubview:iconImageView];
    // [iconImageView release];
+<<<<<<< HEAD
     */
     
     carJaField.delegate=self;
     carNumberField.delegate=self;
+=======
+>>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
     ///////////////////////////////////////
     UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     //[selectCarBtn addTarget:self action:@selector(changebgdown:) forControlEvents:UIControlEventTouchDown];
@@ -481,7 +495,33 @@
     }
     
 }
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+{
+    
+    NSCharacterSet *cs;
+    NSString * toBeString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    cs = [[NSCharacterSet characterSetWithCharactersInString:NUMBERS] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    BOOL basicTest = [string isEqualToString:filtered];
+    
+    if (carJaField== textField )
+    {
+        if ([toBeString length] > 6 ) {
+            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"请输入车驾号后六位" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] autorelease];
+            [alert show];
+            return NO;
+        }
+    }
+    if (carNumberField==textField) {
+        if ([toBeString length] > 6) {
+            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"请输入车牌号" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] autorelease];
+            [alert show];
+            return NO;
+        }
+        
+    }
+    return YES;
+}
 
 //100, 20, 210, 40
 -(UITextField*)getTextFieldNormal:(NSString *)placeMsg{
@@ -690,6 +730,10 @@ int xContentOffsetLastTime = 0;
 //    [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:230.0f] waitUntilDone:NO];
 //    return YES;
 //}
+<<<<<<< HEAD
 //
+=======
+
+>>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 
 @end

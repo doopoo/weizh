@@ -10,7 +10,7 @@
 @class HomeIntroduce;
 @class CarInfo;
 @class RemindViewController;
-@interface CarInfoListViewController : UIViewController{
+@interface CarInfoListViewController : UIViewController<UIAlertViewDelegate>{
     RemindViewController* remindViewController;
     CarInfo* carInfo;//cell
     NSArray* data;//请求返回数据

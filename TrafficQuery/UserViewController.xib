@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">11G63b</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<int key="IBDocument.SystemTarget">1552</int>
+		<string key="IBDocument.SystemVersion">12C3103</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1930</string>
+			<string key="NS.object.0">2083</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -68,8 +68,13 @@
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
 						<object class="NSColor" key="IBUINormalTitleColor">
+<<<<<<< HEAD
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC4wNDczODU2MjA5MgA</bytes>
+=======
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MC4wODIzNTI5NDM3MiAwLjA1MDk4MDM5NjU3IDAuMDE5NjA3ODQzODMAA</bytes>
+>>>>>>> a63ee2c0fe3193f5e7340916de0e789cb90cff4b
 						</object>
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="193339678">
 							<int key="NSColorSpace">3</int>
@@ -564,6 +569,6 @@
 			<string key="carInfo_bg.png">{300, 270}</string>
 			<string key="top_panal_background.png">{640, 107}</string>
 		</dictionary>
-		<string key="IBCocoaTouchPluginVersion">1930</string>
+		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>
