@@ -40,12 +40,12 @@
     //计算实际需要得视图大小
     CGSize labelSize = [text sizeWithFont:font constrainedToSize:constraintSize lineBreakMode:NSLineBreakByCharWrapping];
     m=label.frame.size.height;
-    NSLog(@"%f",m);
+//    NSLog(@"%f",m);
     CGRect rect = CGRectMake(label.frame.origin.x, label.frame.origin.y, labelSize.width, labelSize.height);
     label.frame=rect;
     n=label.frame.size.height;
-    NSLog(@"%f",n);
-    label.font = font;
+//    NSLog(@"%f",n);
+    //label.font = font;
     label.text = text;
     return n-m;
 }

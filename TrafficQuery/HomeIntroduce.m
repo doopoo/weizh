@@ -15,6 +15,7 @@
 #import "LoginViewController.h"
 #import "AboutUSViewController.h"
 #import "UserViewController.h"
+#import "RemindViewController.h"
 
 
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
@@ -25,7 +26,7 @@
 
 @implementation HomeIntroduce
 @synthesize carNumberField, carJaField;
-@synthesize  titleLabel, homeBgView;
+@synthesize titleLabel, homeBgView;
 @synthesize leftBarTitle;
 @synthesize iconImageView, iconNumStr, selectIconLabel, carNameStr;
 @synthesize weifaCount;
@@ -44,23 +45,25 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
-    btn_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    self.navigationController.navigationBar.hidden = YES;
+    CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
+    btn_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, screenHeight)];
     [btn_shade addTarget:self action:@selector(aboutSet:) forControlEvents:UIControlEventTouchDown];
     [btn_shade setBackgroundColor:[UIColor blackColor]];
     btn_shade.alpha = 0.5;
     [self.view addSubview:btn_shade];
     btn_shade.hidden = YES;
     show = YES;
-    newView = [[view alloc] initWithFrame:CGRectMake(0, 0, 320,480)];
+    newView = [[view alloc] initWithFrame:CGRectMake(0, 0, 320,screenHeight)];
     newView.backgroundColor = [UIColor clearColor];
     
     //右边的目录---也成一个函数
-    rightView=[[UIView alloc]initWithFrame:CGRectMake(320, 0, 120, 460)];
+    
+    rightView=[[UIView alloc]initWithFrame:CGRectMake(320, 0, 120, screenHeight-20)];
     [rightView setBackgroundColor:[UIColor clearColor]];
     UIImage *image=[UIImage imageNamed:@"choose.png"];
     UIImageView *imageview=[[UIImageView alloc]initWithImage:image];
-    imageview.frame=CGRectMake(0, 0, 120, 460);
+    imageview.frame=CGRectMake(0, 0, 120, screenHeight-20);
     
     UIButton *carManagerButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 120, 70)];
     [carManagerButton setTitle:@"车辆管理" forState:UIControlStateNormal];
@@ -79,7 +82,7 @@
     
     
     
-    UIButton *remindButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 69, 120, 70)];
+    UIButton *remindButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 68, 120, 72)];
     [remindButton setTitle:@"提醒设置" forState:UIControlStateNormal];
     [remindButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     remindButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -87,12 +90,13 @@
 //    [remindButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [remindButton setBackgroundImage:[UIImage imageNamed:@"set_middle_n.png"] forState:UIControlStateNormal];
     [remindButton setBackgroundImage:[UIImage imageNamed:@"set_middle_p.png"] forState:UIControlStateHighlighted];
+    [remindButton addTarget:self action:@selector(remind:) forControlEvents:UIControlEventTouchUpInside];
     UIImageView *remindView = [[UIImageView alloc]initWithFrame:CGRectMake(9, 26, 25, 18)];
     remindView.image = [UIImage imageNamed:@"icon_remind.png"];
     [remindButton addSubview:remindView];
     [remindView release];
     
-    UIButton *userInfButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 138, 120, 70)];
+    UIButton *userInfButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 136, 120, 70)];
     [userInfButton setTitle:@"个人信息" forState:UIControlStateNormal];
     [userInfButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     userInfButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -106,7 +110,7 @@
     [userInfView release];
     [userInfButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-139, 120, 70)];
+    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, screenHeight-158, 120, 70)];
     [shareButton setTitle:@"分享朋友" forState:UIControlStateNormal];
     [shareButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     shareButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -120,7 +124,7 @@
     [shareView release];
     [shareButton addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *aboutUSButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-70, 120, 70)];
+    UIButton *aboutUSButton = [[UIButton alloc]initWithFrame:CGRectMake(0, screenHeight-90, 120, 70)];
     [aboutUSButton setTitle:@"关于我们" forState:UIControlStateNormal];
     [aboutUSButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     aboutUSButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -158,7 +162,7 @@
     
     UIImageView* homeBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeBig_bg.jpg"]];
     homeBg.userInteractionEnabled = YES;
-    homeBg.frame = CGRectMake(0, -20, 320, 480);
+    homeBg.frame = CGRectMake(0, -20, 320, screenHeight);
     [self.homeBgView addSubview:homeBg];
     
 
@@ -169,14 +173,14 @@
     
     //主页面的设置
     //car icon selected
-   
+   /*
     selectIconLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 20, 210, 40)];
     selectIconLabel.text = @"选择汽车品牌";//要修改
     selectIconLabel.backgroundColor = [UIColor clearColor];
     selectIconLabel.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0];
     selectIconLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:23];
     
-    
+    */
     
     CGRect bgFrameCarSelect = CGRectMake(20, -5, 280, 80);
     UIImageView* bgCarSelect = [[UIImageView alloc] initWithFrame:bgFrameCarSelect];
@@ -190,7 +194,7 @@
     //[self.view addSubview:bgCarSelect];
     
     
-    
+    /*
     UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [selectCarBtn addTarget:self action:@selector(selectCar:) forControlEvents:UIControlEventTouchUpInside];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"ic_arrow.png"] forState:UIControlStateNormal];
@@ -198,19 +202,23 @@
     [bgCarSelect addSubview:selectCarBtn];
     //selectCarBtn.userInteractionEnabled = YES;
     //[bgCarSelect release];
-    
+    */
     
     //image icon
     //这个地方进行修改
+    /*
     CGRect iconImageFrame = CGRectMake(5, 10, 80, 60);
     iconImageView = [[UIImageView alloc] initWithFrame:iconImageFrame];
     iconNumStr = @"23.jpg";
     iconImageView.image = [UIImage imageNamed:iconNumStr];
     [bgCarSelect addSubview:iconImageView];
    // [iconImageView release];
+    */
     
+    carJaField.delegate=self;
+    carNumberField.delegate=self;
     ///////////////////////////////////////
-    selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     //[selectCarBtn addTarget:self action:@selector(changebgdown:) forControlEvents:UIControlEventTouchDown];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"ic_more_item_default.png"] forState:UIControlStateNormal];
     [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"set_middle_p.png"] forState:UIControlStateHighlighted];
@@ -231,25 +239,30 @@
     selectIconLabel.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0];
     selectIconLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     
+    
+    UIImageView* btn_arrow = [[UIImageView alloc] initWithFrame:CGRectMake(240, 30, 25, 25)];
+    btn_arrow.image = [UIImage imageNamed:@"ic_arrow.png"];
+    
     [selectCarBtn addSubview:iconImageView];
     [selectCarBtn addSubview:selectIconLabel];
+    [selectCarBtn addSubview:btn_arrow];
     [self.homeBgView addSubview: selectCarBtn];
     
     /////////////////////////////////////////////////
     
     //车牌号:
-    UILabel* carNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 10, 150, 40)];
+    UILabel* carNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 11, 150, 40)];
     carNumberLabel.text = @"车牌号 : 豫";
     carNumberLabel.backgroundColor = [UIColor clearColor];
     carNumberLabel.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0];
-    carNumberLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:23];
+    carNumberLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     
     //    [self.view addSubview:carNumberLabel];
     //    [carNumberLabel release];
     //20, -5, 280, 80
     CGRect bgFrameCarNumber = CGRectMake(20, 73, 280, 80);
     UIImageView* bgCarNumber = [[UIImageView alloc] initWithFrame:bgFrameCarNumber];
-    bgCarNumber.image = [UIImage imageNamed:@"ic_more_item_middle.png"];
+    bgCarNumber.image = [UIImage imageNamed:@"middle.png"];
     bgCarNumber.userInteractionEnabled = YES;
     [bgCarNumber addSubview:carNumberField];
     [bgCarNumber addSubview:carNumberLabel];
@@ -267,7 +280,7 @@
     carJaLabel.text= @"车驾号 :  ";
     carJaLabel.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0];
     carJaLabel.backgroundColor = [UIColor clearColor];
-    carJaLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:23];
+    carJaLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     
     //20, 73, 280, 80
     CGRect bgFrameCarJa = CGRectMake(20, 130, 280, 80);
@@ -289,7 +302,15 @@
     UIButton* searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [searchBtn addTarget:self action:@selector(searchCarInfo:) forControlEvents:UIControlEventTouchUpInside];
     [searchBtn setBackgroundImage:[UIImage imageNamed:@"btn_normal.png"] forState:UIControlStateNormal];
-    searchBtn.frame = CGRectMake(20, 240, 280, 70);
+   
+    [searchBtn setTitle:@"开始查询" forState:UIControlStateNormal];
+    
+    searchBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
+   
+    [searchBtn setTitleColor:[UIColor colorWithRed:50/255.0 green:103/255.0 blue:149/255.0 alpha:1] forState:UIControlStateNormal];
+    
+//    searchBtn.titleLabel 
+    searchBtn.frame = CGRectMake(20, 240, 280, 50);
    // [homeBg addSubview:searchBtn];
    // [self.view addSubview:searchBtn];
     [self.homeBgView addSubview:searchBtn];
@@ -324,21 +345,27 @@
     }
     [self aboutSet:self];
 }
+-(void)remind:(id)sender{
+    remindViewController = [[RemindViewController alloc] initWithNibName:@"RemindViewController" bundle:nil];
+    [self.navigationController pushViewController:remindViewController animated:YES];
+    [self aboutSet:self];
+}
 -(void)aboutUS:(id)sender{
     aboutUSViewController = [[AboutUSViewController alloc] initWithNibName:@"AboutUSViewController" bundle:nil];
     [self.navigationController pushViewController:aboutUSViewController animated:YES];
     [self aboutSet:self];
 }
 -(IBAction)aboutSet:(id)sender{
+    CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
     [UIView beginAnimations:@"movement" context:nil];
     [UIView setAnimationDuration:0.5f];
    // show = YES;
     if(show){
-        rightView.frame = CGRectMake(320-120, 0, 120, 480);
+        rightView.frame = CGRectMake(320-120, 0, 120, screenHeight);
         show = NO;
         btn_shade.hidden = NO;
     }else{
-        rightView.frame = CGRectMake(320, 0, 120, 480);
+        rightView.frame = CGRectMake(320, 0, 120, screenHeight);
         show = YES;
         btn_shade.hidden = YES;
     }
@@ -352,7 +379,7 @@
     //UITextField* carNumberField;//车牌号
     //UITextField* carJaField;//车驾号
     int carJiaLength = [self.carJaField.text length];
-    NSLog(@"carJiaLength = %d", carJiaLength);
+ //   NSLog(@"carJiaLength = %d", carJiaLength);
     
     if( (carJiaLength == 6) && (![self.selectIconLabel.text isEqualToString:@"选择汽车品牌"]) )
     {
@@ -458,12 +485,12 @@
 
 //100, 20, 210, 40
 -(UITextField*)getTextFieldNormal:(NSString *)placeMsg{
-    CGRect frame = CGRectMake(125, 18, 220, 25);
+    CGRect frame = CGRectMake(100, 20, 220, 25);
     UITextField* textFieldNormal = [[[UITextField alloc] initWithFrame:frame] autorelease];
    // textFieldNormal.backgroundColor = [UIColor clearColor];
     textFieldNormal.borderStyle = UITextBorderStyleNone;
     textFieldNormal.textColor = [UIColor blackColor];
-    textFieldNormal.font = [UIFont systemFontOfSize:21.0];
+    textFieldNormal.font = [UIFont systemFontOfSize:18.0];
     textFieldNormal.placeholder = placeMsg;
     textFieldNormal.backgroundColor = [UIColor clearColor];
     textFieldNormal.autocorrectionType = UITextAutocorrectionTypeNo;	// no auto correction support
@@ -493,9 +520,9 @@
 
 //添加程序第一次启动时介绍页面视图
 -(void)theAppFirstStartView{
-     
+     CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
-    UIView* firstShowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
+    UIView* firstShowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, screenHeight-20)];
     firstShowView.backgroundColor = [UIColor blackColor];
     firstShowView.tag = 18;
     [self.view addSubview:firstShowView];
@@ -503,7 +530,7 @@
     
     UIScrollView* scrollViewInFirstView = [[UIScrollView alloc] initWithFrame:firstShowView.bounds];
     scrollViewInFirstView.backgroundColor = [UIColor clearColor];
-    scrollViewInFirstView.contentSize = CGSizeMake(320*2, 460);
+    scrollViewInFirstView.contentSize = CGSizeMake(320*2, screenHeight-20);
     scrollViewInFirstView.showsVerticalScrollIndicator = NO;
     scrollViewInFirstView.showsHorizontalScrollIndicator = NO;
     scrollViewInFirstView.pagingEnabled = YES;
@@ -518,15 +545,16 @@
         NSString* introduceFile = [[NSBundle mainBundle] pathForResource:string ofType:@"png"];
         UIImage* introduceImage = [UIImage imageWithContentsOfFile:introduceFile];
         UIImageView* introduceImageView = [[UIImageView alloc] initWithImage:introduceImage];
-        introduceImageView.frame = CGRectMake(320*(i-1), 0, 320, 460);
+        introduceImageView.frame = CGRectMake(320*(i-1), 0, 320, screenHeight-20);
         [scrollViewInFirstView addSubview:introduceImageView];
         [introduceImageView release];
         
     }
     //主页按纽262 × 158 pixels
     UIButton* startBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    startBtn.frame = CGRectMake(35+320, 300, 262, 80);
-    [startBtn setImage:[UIImage imageNamed:@"ljsy_p.png"] forState:UIControlStateNormal];
+//    startBtn.frame = CGRectMake(35+320, 300, 262, 80);
+    startBtn.frame = CGRectMake(100+320, 320, 131, 80);
+    [startBtn setImage:[UIImage imageNamed:@"ljsy_n.png"] forState:UIControlStateNormal];
     [startBtn addTarget:self action:@selector(startTheApp) forControlEvents:UIControlEventTouchUpInside];
     [scrollViewInFirstView addSubview:startBtn];
     
@@ -576,6 +604,35 @@ int xContentOffsetLastTime = 0;
     }
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+{
+    
+    NSCharacterSet *cs;
+    NSString * toBeString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    cs = [[NSCharacterSet characterSetWithCharactersInString:NUMBERS] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    BOOL basicTest = [string isEqualToString:filtered];
+    
+    if (carJaField== textField )
+    {
+        if ([toBeString length] > 6 ) {
+            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"请输入车驾号后六位" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] autorelease];
+            [alert show];
+            return NO;
+        }
+    }
+    if (carNumberField==textField) {
+        if ([toBeString length] > 6) {
+            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"请输入车牌号" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] autorelease];
+            [alert show];
+            return NO;
+        }
+        
+    }
+    
+    [self parentViewController];
+    return YES;
+}
 
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -607,32 +664,32 @@ int xContentOffsetLastTime = 0;
     
     [super dealloc];
 }
-- (void)scrollIfNeeded:(NSNumber *)yCenterPos {
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.3];
-    //loginBg.center = CGPointMake(loginBg.center.x, [yCenterPos floatValue]);
-    homeBgView.center = CGPointMake(homeBgView.center.x, [yCenterPos floatValue]);
-	[UIView commitAnimations];
-}
--(void)textFieldDidBeginEditing:(UITextField *)textField{
-    [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:80.0f] waitUntilDone:NO];
-}
-
-//改变输入框焦点
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    if(textField == carNumberField)
-    {
-        [carNumberField resignFirstResponder];
-        //[pwdTextField becomeFirstResponder];
-    }else
-    {
-        [carJaField resignFirstResponder];
-    }
-    
-    [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:230.0f] waitUntilDone:NO];
-    return YES;
-}
-
+//- (void)scrollIfNeeded:(NSNumber *)yCenterPos {
+//	[UIView beginAnimations:nil context:nil];
+//	[UIView setAnimationDuration:0.3];
+//    //loginBg.center = CGPointMake(loginBg.center.x, [yCenterPos floatValue]);
+//    homeBgView.center = CGPointMake(homeBgView.center.x, [yCenterPos floatValue]);
+//	[UIView commitAnimations];
+//}
+//-(void)textFieldDidBeginEditing:(UITextField *)textField{
+//    [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:80.0f] waitUntilDone:NO];
+//}
+//
+////改变输入框焦点
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+//    
+//    if(textField == carNumberField)
+//    {
+//        [carNumberField resignFirstResponder];
+//        //[pwdTextField becomeFirstResponder];
+//    }else
+//    {
+//        [carJaField resignFirstResponder];
+//    }
+//    
+//    [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:230.0f] waitUntilDone:NO];
+//    return YES;
+//}
+//
 
 @end

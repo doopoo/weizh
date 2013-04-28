@@ -59,14 +59,16 @@
     UIImageView *topView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"top_panal_background.png"]];
     [topView setFrame:CGRectMake(0, 0, 320, 60)];
     
-    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 8, 70, 40)];
+    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 8, 50, 30)];
     [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"btn_back.png"] forState:UIControlStateNormal];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"btn_back_s.png"] forState:UIControlStateSelected];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_b.png"] forState:UIControlStateSelected];
+    [backButton setTitle:@"返回" forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(140, 8, 140, 40)];
+    UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(120, 3, 140, 40)];
     [titleLable setBackgroundColor:[UIColor clearColor]];
     titleLable.text = @"分享给朋友";
+    titleLable.font = [UIFont systemFontOfSize:20];
     
 
  // 腾讯微博初始化
@@ -75,20 +77,20 @@
     self.weiboEngine = engine;
     [engine release];
 
-    TCLogButton = [[UIButton alloc]initWithFrame:CGRectMake(90, 190, 20, 20)];
-    TCLabel = [[UILabel alloc]initWithFrame:CGRectMake(110, 180, 35, 40)];
+    TCLogButton = [[UIButton alloc]initWithFrame:CGRectMake(100, 190,30, 30)];
+    TCLabel = [[UILabel alloc]initWithFrame:CGRectMake(130, 185, 35, 40)];
     TCLabel.font = [UIFont fontWithName:@"Arial" size:8];
     TCLabel.numberOfLines = 2;
     [TCLabel setBackgroundColor:[UIColor clearColor]];
     if(weiboEngine.isLoggedIn)
     {
         TCOpen = YES;
-        [self TCSetButtonBgImage:[UIImage imageNamed:@"icon_car.png"] labelText:@"腾讯微博已授权"];
+        [self TCSetButtonBgImage:[UIImage imageNamed:@"tencent_1.png"] labelText:@"腾讯微博已授权"];
     }
     else
     {
         TCOpen = NO;
-       [self TCSetButtonBgImage:[UIImage imageNamed:@"car_default.png"] labelText:@"腾讯微博未授权"]; 
+       [self TCSetButtonBgImage:[UIImage imageNamed:@"tencent_2.png"] labelText:@"腾讯微博未授权"]; 
     }
     [TCLogButton addTarget:self action:@selector(TCOnLogin) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:TCLogButton];
@@ -108,28 +110,28 @@
         sinaweibo.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
     }
     NSLog(@"%@",sinaweiboInfo);
-    SNLogButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 190, 20, 20)];
-    SNLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, 180, 35, 40)];
+    SNLogButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 190, 30, 30)];
+    SNLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 185, 35, 40)];
     SNLabel.font = [UIFont fontWithName:@"Arial" size:8];
     SNLabel.numberOfLines = 2;
     [SNLabel setBackgroundColor:[UIColor clearColor]];
     if(sinaweibo.isLoggedIn)
     {
         SNOpen = YES;
-        [self SNSetButtonBgImage:[UIImage imageNamed:@"icon_car.png"] labelText:@"新浪微博已授权"];
+        [self SNSetButtonBgImage:[UIImage imageNamed:@"sina_1.png"] labelText:@"新浪微博已授权"];
     }
     else
     {
         SNOpen = NO;
-        [self SNSetButtonBgImage:[UIImage imageNamed:@"car_default.png"] labelText:@"新浪微博未授权"];
+        [self SNSetButtonBgImage:[UIImage imageNamed:@"sina_2.png"] labelText:@"新浪微博未授权"];
     }
 
     [SNLogButton addTarget:self action:@selector(SNOnLogin:) forControlEvents:UIControlEventTouchUpInside];
 //微信
-    UIButton *WXShareButton = [[UIButton alloc]initWithFrame:CGRectMake(160, 190, 20, 20)];
-    [WXShareButton setBackgroundImage:[UIImage imageNamed:@"icon_share.png"] forState:UIControlStateNormal];
+    UIButton *WXShareButton = [[UIButton alloc]initWithFrame:CGRectMake(180, 190, 30, 30)];
+    [WXShareButton setBackgroundImage:[UIImage imageNamed:@"weixin.png"] forState:UIControlStateNormal];
     [WXShareButton addTarget:self action:@selector(WXShare) forControlEvents:UIControlEventTouchUpInside];
-    UILabel *WXLabel = [[UILabel alloc]initWithFrame:CGRectMake(180, 180, 20, 40)];
+    UILabel *WXLabel = [[UILabel alloc]initWithFrame:CGRectMake(210, 185, 20, 40)];
     WXLabel.font = [UIFont fontWithName:@"Arial" size:8];
     WXLabel.text = @"微信分享";
     WXLabel.numberOfLines = 2;
@@ -137,10 +139,10 @@
     [self.view addSubview:WXLabel];
     [self.view addSubview:WXShareButton];
 //短信
-    UIButton *messageShareButton = [[UIButton alloc]initWithFrame:CGRectMake(220, 190, 20, 20)];
-    [messageShareButton setBackgroundImage:[UIImage imageNamed:@"icon_share.png"] forState:UIControlStateNormal];
+    UIButton *messageShareButton = [[UIButton alloc]initWithFrame:CGRectMake(250, 190, 30, 30)];
+    [messageShareButton setBackgroundImage:[UIImage imageNamed:@"news.png"] forState:UIControlStateNormal];
     [messageShareButton addTarget:self action:@selector(messageShare) forControlEvents:UIControlEventTouchUpInside];
-    UILabel *messageLabel = [[UILabel alloc]initWithFrame:CGRectMake(240, 180, 20, 40)];
+    UILabel *messageLabel = [[UILabel alloc]initWithFrame:CGRectMake(280, 185, 20, 40)];
     messageLabel.font = [UIFont fontWithName:@"Arial" size:8];
     messageLabel.text = @"短信分享";
     messageLabel.numberOfLines = 2;
@@ -148,12 +150,12 @@
     [self.view addSubview:messageLabel];
     [self.view addSubview:messageShareButton];
     
-    sendButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 250, 110, 40)];
+    sendButton = [[UIButton alloc]initWithFrame:CGRectMake(40, 250, 200, 60)];
     [sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [sendButton setBackgroundImage:[UIImage imageNamed:@"universal_btn_a.png"] forState:UIControlStateNormal];
+    [sendButton setBackgroundImage:[UIImage imageNamed:@"btn_search.png"] forState:UIControlStateNormal];
     [sendButton setTitle:@"微博发送" forState:UIControlStateNormal];  [sendButton addTarget:self action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
     
-    wbContent = [[UITextView alloc]initWithFrame:CGRectMake(10, 65, 300, 90)];
+    wbContent = [[UITextView alloc]initWithFrame:CGRectMake(10, 65, 300, 110)];
     wbContent.text = @"河南车主有福了！我正在用＃河南违章查询＃，省内省外违章不仅能查，更能及时提醒。赶快下载体验http://www.chexingle.com/";
     wbContent.font = [UIFont fontWithName:@"Arial" size:15];
     wbContent.layer.borderColor = [UIColor grayColor].CGColor;
@@ -295,12 +297,12 @@
     { 
         if([TCLabel.text isEqualToString:@"腾讯微博已关闭"])
         {
-          [self TCSetButtonBgImage:[UIImage imageNamed:@"icon_car.png"] labelText:@"腾讯微博已授权"];
+          [self TCSetButtonBgImage:[UIImage imageNamed:@"tencent_1.png"] labelText:@"腾讯微博已授权"];
           TCOpen = YES;
         }
         else
         {
-            [self TCSetButtonBgImage:[UIImage imageNamed:@"icon_p.png"] labelText:@"腾讯微博已关闭"];
+            [self TCSetButtonBgImage:[UIImage imageNamed:@"tencent_3.png"] labelText:@"腾讯微博已关闭"];
             TCOpen = NO;
  
         }
@@ -316,7 +318,7 @@
 - (void)onSuccessLogin
 {
     [indicatorView stopAnimating];
-    [self TCSetButtonBgImage:[UIImage imageNamed:@"icon_car.png"] labelText:@"腾讯微博已授权"];
+    [self TCSetButtonBgImage:[UIImage imageNamed:@"tencent_1.png"] labelText:@"腾讯微博已授权"];
     TCOpen = YES;
 }
 
@@ -342,12 +344,12 @@
     {
         if([SNLabel.text isEqualToString:@"新浪微博已关闭"])
         {
-            [self SNSetButtonBgImage:[UIImage imageNamed:@"icon_car.png"] labelText:@"新浪微博已授权"];
+            [self SNSetButtonBgImage:[UIImage imageNamed:@"sina_1.png"] labelText:@"新浪微博已授权"];
             SNOpen = YES;
         }
         else
         {
-            [self SNSetButtonBgImage:[UIImage imageNamed:@"icon_p.png"] labelText:@"新浪微博已关闭"];
+            [self SNSetButtonBgImage:[UIImage imageNamed:@"sina_3.png"] labelText:@"新浪微博已关闭"];
             SNOpen = NO;
             
         }
@@ -365,7 +367,7 @@
 {
     NSLog(@"sinaweibosucced");
     [self storeAuthData];
-    [self SNSetButtonBgImage:[UIImage imageNamed:@"icon_car.png"] labelText:@"新浪微博已授权"];
+    [self SNSetButtonBgImage:[UIImage imageNamed:@"sina_1.png"] labelText:@"新浪微博已授权"];
     SNOpen = YES;
     //[self resetButton];
 }

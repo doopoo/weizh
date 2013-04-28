@@ -20,6 +20,7 @@
 #import "CarManager.h"
 #import "UserViewController.h"
 #import "ShareViewController.h"
+#import "RemindViewController.h"
 
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
@@ -105,6 +106,7 @@
     remindView.image = [UIImage imageNamed:@"icon_remind.png"];
     [remindButton addSubview:remindView];
     [remindView release];
+    [remindButton addTarget:self action:@selector(remind:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *userInfButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 138, 120, 70)];
     [userInfButton setTitle:@"个人信息" forState:UIControlStateNormal];
@@ -175,6 +177,13 @@
     self.carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
     NSLog(@"self.carMutableArray = %@", self.carMutableArray);
 }
+-(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0)return 80.0f;
+    if(indexPath.section == 1)return 50.0f;
+    return 0.0f;
+}
+
+
 //TableViewController
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
     if(section == 1)
@@ -231,6 +240,7 @@
         cell = (AddButtonCell*)[tableView dequeueReusableCellWithIdentifier:@"AddButtonCell"];
         if(!cell){
             cell = [[[NSBundle mainBundle] loadNibNamed:@"AddButtonCell" owner:self options:nil] lastObject];
+            cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"btn_cell.png"]];
         }
         ((AddButtonCell*)cell).indexVC = self;
     }
@@ -246,6 +256,11 @@
     managerCars = [[carCommon alloc] initWithNibName:@"carCommon" bundle:nil];
     [self.navigationController pushViewController:managerCars animated:YES];
     
+}
+-(void)remind:(id)sender{
+    remindViewController = [[RemindViewController alloc] initWithNibName:@"RemindViewController" bundle:nil];
+    [self.navigationController pushViewController:remindViewController animated:YES];
+    [self setting_pressed:self];
 }
 
 -(void)login:(id)sender{

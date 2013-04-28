@@ -14,6 +14,7 @@
     RemindViewController* remindViewController;
     CarInfo* carInfo;//cell
     NSArray* data;//请求返回数据
+    NSDictionary* myDicData;
     NSArray* weifaArr;
     UITableView* mainTabView;
     HomeIntroduce* delegate;
@@ -26,7 +27,9 @@
     NSMutableDictionary* countDic;
     NSString* carName;
     float n ;
+    NSNumber* countArr;
 }
+@property(nonatomic, retain)NSDictionary* myDicData;
 @property(nonatomic, retain)NSString* carName;
 @property(nonatomic, retain)IBOutlet UILabel* whichCarLabel;
 @property(nonatomic, retain)IBOutlet UILabel* homeManyLabel;

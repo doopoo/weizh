@@ -42,7 +42,7 @@
 -(IBAction)goBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
 }
-//这个有点难度
+
 -(IBAction)getYanZheng:(id)sender{
     NSString* urlString = [NSString stringWithFormat:@"http://uc.chexingle.com:8080/car/verCode/getCode/"];
     ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];

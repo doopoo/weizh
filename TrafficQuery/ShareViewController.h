@@ -13,8 +13,8 @@
 #import "TCWBEngine.h"
 #import "WXApi.h"
 
-#define kAppKey             @"4187433260"
-#define kAppSecret          @"10407d13452e077ce3959c31f08cce74"
+#define kAppKey             @"1986722134"
+#define kAppSecret          @"fb2ff04aabcb3024403560faeed01847"
 #define kAppRedirectURI     @"http://www.sina.com"
 
 #ifndef kAppKey
