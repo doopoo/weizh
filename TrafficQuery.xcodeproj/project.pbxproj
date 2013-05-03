@@ -1831,7 +1831,7 @@
 					armv7,
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: dan yu (62ZC34F672)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HENAN CHENGLIAN INDUSTRIAL CO.LTD";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficQuery/TrafficQuery-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1843,7 +1843,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7D8FC2C0-1B47-48B7-86E5-1E4EBDC8ACEA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52564048-6FBA-4404-9D49-1F92854C4ED4";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1857,7 +1857,7 @@
 					armv7,
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: dan yu (62ZC34F672)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HENAN CHENGLIAN INDUSTRIAL CO.LTD";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficQuery/TrafficQuery-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1869,7 +1869,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7D8FC2C0-1B47-48B7-86E5-1E4EBDC8ACEA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52564048-6FBA-4404-9D49-1F92854C4ED4";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
