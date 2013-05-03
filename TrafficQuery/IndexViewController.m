@@ -60,22 +60,23 @@
     // Do any additional setup after loading the view from its nib.
     self.mainTableView.scrollEnabled = NO;
     //景
-    btn_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
+    btn_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, screenHeight)];
     [btn_shade addTarget:self action:@selector(setting_pressed:) forControlEvents:UIControlEventTouchDown];
     [btn_shade setBackgroundColor:[UIColor blackColor]];
     btn_shade.alpha = 0.5;
     [self.view addSubview:btn_shade];
     btn_shade.hidden = YES;
     show = YES;
-    newView = [[view alloc] initWithFrame:CGRectMake(0, 0, 320,480)];
+    newView = [[view alloc] initWithFrame:CGRectMake(0, 0, 320,screenHeight)];
     newView.backgroundColor = [UIColor clearColor];
     
     //右边的目录
-    rightView=[[UIView alloc]initWithFrame:CGRectMake(320, 0, 120, 460)];
+    rightView=[[UIView alloc]initWithFrame:CGRectMake(320, 0, 120, screenHeight-20)];
     [rightView setBackgroundColor:[UIColor clearColor]];
     UIImage *image=[UIImage imageNamed:@"choose.png"];
     UIImageView *imageview=[[UIImageView alloc]initWithImage:image];
-    imageview.frame=CGRectMake(0, 0, 120, 460);
+    imageview.frame=CGRectMake(0, 0, 120, screenHeight-20);
     
     UIButton *carManagerButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 120, 70)];
     [carManagerButton setTitle:@"车辆管理" forState:UIControlStateNormal];
@@ -122,7 +123,7 @@
     [userInfView release];
     [userInfButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-139, 120, 71)];
+    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, screenHeight-20-139, 120, 71)];
     [shareButton setTitle:@"分享朋友" forState:UIControlStateNormal];
     [shareButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     shareButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -136,7 +137,7 @@
     [shareView release];
     [shareButton addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *aboutUSButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-70, 120, 70)];
+    UIButton *aboutUSButton = [[UIButton alloc]initWithFrame:CGRectMake(0, screenHeight-20-70, 120, 70)];
     [aboutUSButton setTitle:@"关于我们" forState:UIControlStateNormal];
     [aboutUSButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     aboutUSButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -321,13 +322,14 @@
 -(IBAction)setting_pressed:(id)sender{
     [UIView beginAnimations:@"movement" context:nil];
     [UIView setAnimationDuration:0.5f];
+    CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
     // show = YES;
     if(show){
-        rightView.frame = CGRectMake(320-120, 0, 120, 480);
+        rightView.frame = CGRectMake(320-120, 0, 120, screenHeight);
         show = NO;
         btn_shade.hidden = NO;
     }else{
-        rightView.frame = CGRectMake(320, 0, 120, 480);
+        rightView.frame = CGRectMake(320, 0, 120, screenHeight);
         show = YES;
         btn_shade.hidden = YES;
     }

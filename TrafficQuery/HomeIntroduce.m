@@ -53,6 +53,14 @@
     btn_shade.alpha = 0.5;
     [self.view addSubview:btn_shade];
     btn_shade.hidden = YES;
+    
+    tiShi_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, screenHeight)];
+    [tiShi_shade addTarget:self action:@selector(tiShi) forControlEvents:UIControlEventTouchDown];
+    [tiShi_shade setBackgroundColor:[UIColor blackColor]];
+    tiShi_shade.alpha = 0.5;
+    [self.view addSubview:tiShi_shade];
+    tiShi_shade.hidden = YES;
+
     show = YES;
     newView = [[view alloc] initWithFrame:CGRectMake(0, 0, 320,screenHeight)];
     newView.backgroundColor = [UIColor clearColor];
@@ -61,6 +69,13 @@
     
     rightView=[[UIView alloc]initWithFrame:CGRectMake(320, 0, 120, screenHeight-20)];
     [rightView setBackgroundColor:[UIColor clearColor]];
+    
+    xingshizhengView=[[UIView alloc]initWithFrame:CGRectMake(320,100,0,0)];
+    xingshi = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"xingshizheng.png"]];
+    xingshi.frame = CGRectMake(0,0,0, 0);
+    [xingshizhengView addSubview:xingshi];
+    [xingshi release];
+
     UIImage *image=[UIImage imageNamed:@"choose.png"];
     UIImageView *imageview=[[UIImageView alloc]initWithImage:image];
     imageview.frame=CGRectMake(0, 0, 120, screenHeight-20);
@@ -152,6 +167,7 @@
     [aboutUSButton release];
     [imageview release];
     [self.view addSubview:rightView];
+    [self.view addSubview:xingshizhengView];
     
 
     
@@ -195,11 +211,8 @@
     
     carJaField.delegate=self;
     carNumberField.delegate=self;
+
     UIButton* selectCarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [selectCarBtn addTarget:self action:@selector(selectCar:) forControlEvents:UIControlEventTouchUpInside];
-    [selectCarBtn setBackgroundImage:[UIImage imageNamed:@"ic_arrow.png"] forState:UIControlStateNormal];
-    selectCarBtn.frame = CGRectMake(250, 30, 25, 25);
-    [bgCarSelect addSubview:selectCarBtn];
     //selectCarBtn.userInteractionEnabled = YES;
     //[bgCarSelect release];
     
@@ -236,7 +249,7 @@
     selectIconLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     
     
-    UIImageView* btn_arrow = [[UIImageView alloc] initWithFrame:CGRectMake(240, 30, 25, 25)];
+    UIImageView* btn_arrow = [[UIImageView alloc] initWithFrame:CGRectMake(240, 30, 18, 28)];
     btn_arrow.image = [UIImage imageNamed:@"ic_arrow.png"];
     
     [selectCarBtn addSubview:iconImageView];
@@ -277,7 +290,9 @@
     carJaLabel.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0];
     carJaLabel.backgroundColor = [UIColor clearColor];
     carJaLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
-    
+    UIButton *carJaButton = [[UIButton alloc]initWithFrame:CGRectMake(240, 12, 30, 30)];
+    [carJaButton setBackgroundImage:[UIImage imageNamed:@"tishi.png"] forState:UIControlStateNormal];
+    [carJaButton addTarget:self action:@selector(tiShi) forControlEvents:UIControlEventTouchUpInside];
     //20, 73, 280, 80
     CGRect bgFrameCarJa = CGRectMake(20, 130, 280, 80);
     
@@ -288,6 +303,8 @@
     [bgCarJa addSubview:carJaLabel];
     //[self.view addSubview:carJaLabel];
     [carJaLabel release];
+    [bgCarJa addSubview:carJaButton];
+    [carJaButton release];
    // [homeBg addSubview:bgCarJa];
    // [self.view addSubview:bgCarJa];
     [self.homeBgView addSubview:bgCarJa];
@@ -321,6 +338,25 @@
     {
         [self theAppFirstStartView];
     }
+}
+-(void)tiShi{
+    
+    [UIView beginAnimations:@"movement" context:nil];
+    [UIView setAnimationDuration:0.5f];
+    // show = YES;
+    if(show){
+        xingshizhengView.frame = CGRectMake(10, 100, 300, 220);
+        xingshi.frame = CGRectMake(0,0,300,220);
+        show = NO;
+        tiShi_shade.hidden = NO;
+    }else{
+        xingshizhengView.frame = CGRectMake(320,100,0,0);
+        xingshi.frame = CGRectMake(0,0,0,0);
+        show = YES;
+        tiShi_shade.hidden = YES;
+    }
+    [UIView commitAnimations];
+
 }
 -(void)managerCars:(id)sender{
     managerCars = [[carCommon alloc] initWithNibName:@"carCommon" bundle:nil];

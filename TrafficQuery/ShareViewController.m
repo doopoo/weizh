@@ -62,7 +62,7 @@
     UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 8, 50, 30)];
     [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_b.png"] forState:UIControlStateSelected];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_b.png"] forState:UIControlStateHighlighted];
     [backButton setTitle:@"返回" forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(120, 3, 140, 40)];
@@ -150,7 +150,7 @@
     [self.view addSubview:messageLabel];
     [self.view addSubview:messageShareButton];
     
-    sendButton = [[UIButton alloc]initWithFrame:CGRectMake(40, 250, 200, 60)];
+    sendButton = [[UIButton alloc]initWithFrame:CGRectMake(25, 250, 250, 40)];
     [sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [sendButton setBackgroundImage:[UIImage imageNamed:@"btn_search.png"] forState:UIControlStateNormal];
     [sendButton setTitle:@"微博发送" forState:UIControlStateNormal];  [sendButton addTarget:self action:@selector(send:) forControlEvents:UIControlEventTouchUpInside];
