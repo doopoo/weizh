@@ -15,6 +15,7 @@
     UITableView* mainTableView;
     int n;
      BOOL isON;
+    NSString *loginIsYes;
 }
 @property(nonatomic, retain)IBOutlet UITableView* mainTableView;
 @property(nonatomic, retain)NSMutableDictionary* carDictionary;

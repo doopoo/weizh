@@ -21,8 +21,6 @@
 @synthesize carDictionary, carMutableArray, mainTableView;
 
 
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,18 +35,22 @@
     UIButton* myBtn = (UIButton*)sender;
     m=myBtn.tag;
     NSLog(@"%i~~%i",m,n);
-
-
-    for (int j=0; j<=n; j++) {
-        UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
-        NSLog(@"~!%@",myBtn1);
-        myBtn1.selected = NO;
-    }
     
-    [myBtn setBackgroundColor:[UIColor clearColor]];
-    [myBtn setImage:[UIImage imageNamed:@"guan.png"] forState:UIControlStateNormal];
-    [myBtn setImage:[UIImage imageNamed:@"kai.png"] forState:UIControlStateSelected];
-    [self touchEvent:myBtn];
+    if (!myBtn.selected==YES) {
+    	for (int j=0; j<=n; j++) {
+        	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
+        	NSLog(@"~!%@",myBtn1);
+        	myBtn1.selected = NO;
+        }
+        [myBtn setBackgroundColor:[UIColor clearColor]];
+    	self.carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
+    	[self.carMutableArray objectAtIndex:m-100];
+    	[self touchEvent:myBtn];
+    }
+    else
+    {
+        myBtn.selected=NO;
+    }
 }
 -(void)touchEvent:(id)sender{
     UIButton* button = (UIButton*)sender;
@@ -104,8 +106,6 @@
         NSMutableString* yu = [NSMutableString stringWithFormat:@"豫"];
         [yu appendString:tempCarNumStr];
         ((remindCell*)cell).carNumberLabel.text = yu;
-        
-        
         tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
         ((remindCell*)cell).carImageView.image = [UIImage imageNamed:tempImageStr];
         ((remindCell*)cell).remindViewControllerDelegate = self;
@@ -131,7 +131,7 @@
 -(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    if(indexPath.section == 0)return 80.0f;
 //    if(indexPath.section == 1)return 44.0f;
-    return 80.0f;
+    return 65.0f;
 }
 
 -(IBAction)remindBtn:(id)sender{
@@ -163,7 +163,7 @@
     NSString* ucidStr = [listDic objectForKey:@"ucid"];
     NSLog(@"ucidStr = %@",ucidStr);
     
-    
+
     NSString* DelString = [NSString stringWithFormat:@"http://www.chexingle.com:8080/car/carInfo/del/"];
     
     ASIFormDataRequest* delRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:DelString]];
@@ -209,7 +209,8 @@
     [requestForm setPostValue:@"116.jpg" forKey:@"imgName"];
     [requestForm setPostValue:@"a03Q37" forKey:@"brand"];
     [requestForm startSynchronous];
-    NSLog(@"response\n%@",[[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding]);
+    loginIsYes=[[[[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding] objectFromJSONString] objectForKey:@"message"];
+    NSLog(@"response\n%@",[[[[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding] objectFromJSONString] objectForKey:@"message"]);
 }
 -(IBAction)goBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
