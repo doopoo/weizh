@@ -83,6 +83,20 @@
     return cell;
     
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    
+     ModifyViewController *mmmm = [[ModifyViewController alloc] initWithNibName:nil bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:mmmm animated:YES];
+     
+}
+-(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return 65.0f;
+}
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
 
     return [[NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH] count];

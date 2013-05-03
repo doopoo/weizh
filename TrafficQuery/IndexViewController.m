@@ -174,10 +174,12 @@
     }
     
     self.carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
+    
+   // NSLog(@"self.carMutableArray = %@", [[self.carMutableArray objectAtIndex:1]objectForKey:@"carImageNum"]);
     NSLog(@"self.carMutableArray = %@", self.carMutableArray);
 }
 -(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.section == 0)return 80.0f;
+    if(indexPath.section == 0)return 65.0f;
     if(indexPath.section == 1)return 50.0f;
     return 0.0f;
 }

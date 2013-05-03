@@ -218,9 +218,9 @@
     
     
     //image icon
-    //这个地方进行修改
+    //这个地方进行修改 prompt.png
     
-    CGRect iconImageFrame = CGRectMake(5, 10, 80, 60);
+    CGRect iconImageFrame = CGRectMake(5, 10, 56, 42);
     iconImageView = [[UIImageView alloc] initWithFrame:iconImageFrame];
     iconNumStr = @"23.jpg";
     iconImageView.image = [UIImage imageNamed:iconNumStr];
@@ -237,7 +237,8 @@
     [selectCarBtn setFrame:CGRectMake(20, -5, 280, 80)];
     
     
-    iconImageView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 10, 80, 60)];
+    
+    iconImageView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 18, 56, 42)];
     iconNumStr = @"23.jpg";
     iconImageView.image = [UIImage imageNamed:iconNumStr];
     
@@ -249,7 +250,9 @@
     selectIconLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     
     
-    UIImageView* btn_arrow = [[UIImageView alloc] initWithFrame:CGRectMake(240, 30, 18, 28)];
+
+    UIImageView* btn_arrow = [[UIImageView alloc] initWithFrame:CGRectMake(240, 26, 18, 28)];
+
     btn_arrow.image = [UIImage imageNamed:@"ic_arrow.png"];
     
     [selectCarBtn addSubview:iconImageView];
@@ -264,7 +267,7 @@
     carNumberLabel.text = @"车牌号 : 豫";
     carNumberLabel.backgroundColor = [UIColor clearColor];
     carNumberLabel.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0];
-    carNumberLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
+    carNumberLabel.font = [UIFont fontWithName:@"华文楷体" size:18];
     
     //    [self.view addSubview:carNumberLabel];
     //    [carNumberLabel release];
@@ -318,9 +321,9 @@
    
     [searchBtn setTitle:@"开始查询" forState:UIControlStateNormal];
     
-    searchBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
+    searchBtn.titleLabel.font = [UIFont fontWithName:@"华文楷体" size:18];
    
-    [searchBtn setTitleColor:[UIColor colorWithRed:50/255.0 green:103/255.0 blue:149/255.0 alpha:1] forState:UIControlStateNormal];
+    [searchBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
 //    searchBtn.titleLabel 
     searchBtn.frame = CGRectMake(20, 240, 280, 50);
@@ -433,10 +436,11 @@
                              self.carNumberField.text,@"carNum",
                              self.carJaField.text, @"carJiaNum",
                              self.iconNumStr,@"carImageNum",
-                             self.selectIconLabel.text, @"carImage", nil];
+                             self.selectIconLabel.text, @"carImage",
+                             nil];
     
 //    [[CarManager sharedInstance].carsArr addObject:carDict];
-    
+
 
     NSArray* fileArr = [NSArray arrayWithContentsOfFile:CARLISTFILEPATH];
     [CarManager sharedInstance].carsArr = [NSMutableArray arrayWithArray:fileArr];
@@ -716,7 +720,6 @@ int xContentOffsetLastTime = 0;
 -(void)dealloc{
     [carListArr release];
     [carDataDict release];
-   
     
     [selectIconLabel release];
     

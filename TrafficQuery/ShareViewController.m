@@ -55,28 +55,27 @@
 {
     [super viewDidLoad];
     UIImageView *bgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"all_bg.png"]];
+    [bgView setFrame:CGRectMake(0,50, 320, 460)];
     [self.view addSubview:bgView];
     UIImageView *topView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"top_panal_background.png"]];
-    [topView setFrame:CGRectMake(0, 0, 320, 60)];
-    
+    [topView setFrame:CGRectMake(0, 0, 320, 50)];
     UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 8, 50, 30)];
     [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_b.png"] forState:UIControlStateHighlighted];
     [backButton setTitle:@"返回" forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(120, 3, 140, 40)];
+    UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(110, 3, 140, 40)];
     [titleLable setBackgroundColor:[UIColor clearColor]];
+    ;
+    [titleLable setFont:[UIFont fontWithName:@"Helvetica-Bold" size:21]] ;
     titleLable.text = @"分享给朋友";
-    titleLable.font = [UIFont systemFontOfSize:20];
-    
 
  // 腾讯微博初始化
     TCWBEngine *engine = [[TCWBEngine alloc] initWithAppKey:WiressSDKDemoAppKey andSecret:WiressSDKDemoAppSecret andRedirectUrl:@"http://www.ying7wang7.com"];
     [engine setRootViewController:self];
     self.weiboEngine = engine;
     [engine release];
-
     TCLogButton = [[UIButton alloc]initWithFrame:CGRectMake(100, 190,30, 30)];
     TCLabel = [[UILabel alloc]initWithFrame:CGRectMake(130, 185, 35, 40)];
     TCLabel.font = [UIFont fontWithName:@"Arial" size:8];
