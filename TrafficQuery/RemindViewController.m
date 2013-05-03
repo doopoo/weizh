@@ -9,7 +9,7 @@
 #import "RemindViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
-#import "remindCell.h"
+
 #import "JSONKit.h"
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
@@ -21,8 +21,6 @@
 @synthesize carDictionary, carMutableArray, mainTableView;
 
 
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,6 +28,39 @@
         // Custom initialization
     }
     return self;
+}
+-(IBAction)remind:(UIButton *)sender
+{
+    int m;
+    UIButton* myBtn = (UIButton*)sender;
+    m=myBtn.tag;
+    NSLog(@"%i~~%i",m,n);
+    
+    if (!myBtn.selected==YES) {
+    	for (int j=0; j<=n; j++) {
+        	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
+        	NSLog(@"~!%@",myBtn1);
+        	myBtn1.selected = NO;
+        }
+        [myBtn setBackgroundColor:[UIColor clearColor]];
+    	self.carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
+    	[self.carMutableArray objectAtIndex:m-100];
+    	[self touchEvent:myBtn];
+    }
+    else
+    {
+        myBtn.selected=NO;
+    }
+}
+-(void)touchEvent:(id)sender{
+    UIButton* button = (UIButton*)sender;
+    button.selected = !button.selected;
+    if(button.imageView.image == [UIImage imageNamed:@"kai.png"]){
+        NSLog(@"开着呢");
+    }
+    if(isON == NO){
+        isON = YES;
+    }
 }
 
 - (void)viewDidLoad
@@ -68,20 +99,21 @@
         //tempCarJiaStr = [self.carDictionary objectForKey:@"carJiaNum"];
        
         
- //   NSInteger row=[indexPath row];
+    NSInteger row=[indexPath row];
     
         //转成大写 并加上 豫字
         NSLog(@"tempCarNumStr = %@",tempCarNumStr);
         NSMutableString* yu = [NSMutableString stringWithFormat:@"豫"];
         [yu appendString:tempCarNumStr];
         ((remindCell*)cell).carNumberLabel.text = yu;
-        
-        
         tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
         ((remindCell*)cell).carImageView.image = [UIImage imageNamed:tempImageStr];
         ((remindCell*)cell).remindViewControllerDelegate = self;
-       // ((remindCell*)cell).kaiguan.tag=row;
-        //NSLog(@"%i",row);
+        ((remindCell*)cell).kaiguan.tag=row+100;
+    ((remindCell*)cell).kaiguan.selected=NO;
+    n=row;
+    ((remindCell*)cell).delegate=self;
+        NSLog(@"%i",row);
         cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_more_item_middle.png"]];
         
         
@@ -99,7 +131,7 @@
 -(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    if(indexPath.section == 0)return 80.0f;
 //    if(indexPath.section == 1)return 44.0f;
-    return 80.0f;
+    return 65.0f;
 }
 
 -(IBAction)remindBtn:(id)sender{
@@ -131,7 +163,7 @@
     NSString* ucidStr = [listDic objectForKey:@"ucid"];
     NSLog(@"ucidStr = %@",ucidStr);
     
-    
+
     NSString* DelString = [NSString stringWithFormat:@"http://www.chexingle.com:8080/car/carInfo/del/"];
     
     ASIFormDataRequest* delRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:DelString]];
@@ -177,7 +209,8 @@
     [requestForm setPostValue:@"116.jpg" forKey:@"imgName"];
     [requestForm setPostValue:@"a03Q37" forKey:@"brand"];
     [requestForm startSynchronous];
-    NSLog(@"response\n%@",[[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding]);
+    loginIsYes=[[[[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding] objectFromJSONString] objectForKey:@"message"];
+    NSLog(@"response\n%@",[[[[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding] objectFromJSONString] objectForKey:@"message"]);
 }
 -(IBAction)goBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];

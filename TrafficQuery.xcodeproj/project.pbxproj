@@ -298,7 +298,6 @@
 		7BEEAF7517150A47000CDA9B /* 97.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAEF717150A47000CDA9B /* 97.jpg */; };
 		7BEEAF7617150A47000CDA9B /* 98.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAEF817150A47000CDA9B /* 98.jpg */; };
 		7BEEAF7717150A47000CDA9B /* 99.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAEF917150A47000CDA9B /* 99.jpg */; };
-		7BEEAF7817150A47000CDA9B /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAEFA17150A47000CDA9B /* Thumbs.db */; };
 		7BEEAF7C17150C29000CDA9B /* CarInfoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEEAF7A17150C29000CDA9B /* CarInfoListViewController.m */; };
 		7BEEAF7D17150C29000CDA9B /* CarInfoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAF7B17150C29000CDA9B /* CarInfoListViewController.xib */; };
 		7BEFD9EC170AD0EA003A6E90 /* CarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFD9EB170AD0EA003A6E90 /* CarInfo.m */; };
@@ -697,7 +696,6 @@
 		7BEEAEF717150A47000CDA9B /* 97.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 97.jpg; sourceTree = "<group>"; };
 		7BEEAEF817150A47000CDA9B /* 98.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 98.jpg; sourceTree = "<group>"; };
 		7BEEAEF917150A47000CDA9B /* 99.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 99.jpg; sourceTree = "<group>"; };
-		7BEEAEFA17150A47000CDA9B /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		7BEEAF7917150C29000CDA9B /* CarInfoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoListViewController.h; sourceTree = "<group>"; };
 		7BEEAF7A17150C29000CDA9B /* CarInfoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoListViewController.m; sourceTree = "<group>"; };
 		7BEEAF7B17150C29000CDA9B /* CarInfoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarInfoListViewController.xib; sourceTree = "<group>"; };
@@ -1345,7 +1343,6 @@
 				7BEEAEF717150A47000CDA9B /* 97.jpg */,
 				7BEEAEF817150A47000CDA9B /* 98.jpg */,
 				7BEEAEF917150A47000CDA9B /* 99.jpg */,
-				7BEEAEFA17150A47000CDA9B /* Thumbs.db */,
 			);
 			path = brand_images;
 			sourceTree = "<group>";
@@ -1573,7 +1570,6 @@
 				7BEEAF7517150A47000CDA9B /* 97.jpg in Resources */,
 				7BEEAF7617150A47000CDA9B /* 98.jpg in Resources */,
 				7BEEAF7717150A47000CDA9B /* 99.jpg in Resources */,
-				7BEEAF7817150A47000CDA9B /* Thumbs.db in Resources */,
 				7BEEAF7D17150C29000CDA9B /* CarInfoListViewController.xib in Resources */,
 				7B31C88B17164BC500A3F2BA /* IndexViewController.xib in Resources */,
 				7B31C8BD17164E9C00A3F2BA /* about_logo.jpg in Resources */,

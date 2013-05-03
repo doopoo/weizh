@@ -43,13 +43,14 @@
    
     [super viewDidLoad];
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-	leftButton.frame = CGRectMake(5,6, 50, 30);
+	leftButton.frame = CGRectMake(10,7, 50, 30);
    
 	[leftButton setTitle:@"返回" forState:UIControlStateNormal];
 	leftButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
-    leftButton.titleLabel.textColor = [UIColor blackColor];
-    leftButton.titleLabel.shadowOffset = CGSizeMake(-1.0f, 2.0f);
-    leftButton.titleLabel.shadowColor = [UIColor blackColor];
+   // leftButton.titleLabel.textColor = [UIColor blackColor];
+   // leftButton.titleLabel.shadowOffset = CGSizeMake(-1.0f, 2.0f);
+  //  leftButton.titleLabel.shadowColor = [UIColor blackColor];
+    [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
  /*
 	[leftButton setTitleEdgeInsets:UIEdgeInsetsMake(5, 10, 5, 5)];*/
 	[leftButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
@@ -134,7 +135,6 @@
 
     NSLog(@"requestClass = %@",[requests class]);//JKDictionary
     
-    
     if (![[[[requests objectForKey:@"root"] objectForKey:@"head"]objectForKey:@"message"] isEqualToString:@"Success"]) {
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"您所查询的信息有误" message:nil delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
         [alert show];
@@ -146,16 +146,6 @@
         
     }
     NSLog(@"%@",[request class]);//JKDictionary
-            if (![[[[requests objectForKey:@"root"] objectForKey:@"head"]objectForKey:@"message"] isEqualToString:@"Success"]) {
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"您所查询的信息有误" message:nil delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
-            [alert show];
-            [alert release];
-               NSMutableArray * carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
-                [carMutableArray removeLastObject];
-                [carMutableArray writeToFile:CARLISTFILEPATH atomically:YES];
-                
-                
-        }
 
 
     //做逻辑处理
@@ -203,7 +193,6 @@
     {//多条记录
 
      NSArray* carArrays = [[[requests objectForKey:@"root"] objectForKey:@"VehSurveilInfo" ] objectForKey:@"surveil"];
-        
     //违法次数
     NSString* homeManyStr = [NSString stringWithFormat:@"%@", countArr];
     self.homeManyLabel.text = homeManyStr;
@@ -247,8 +236,6 @@
               allMoney += [otherNum intValue];
           }
           
-
-
       }
     
     self.countMoneyLabel.text = [NSString stringWithFormat:@"%d",allMoney];
