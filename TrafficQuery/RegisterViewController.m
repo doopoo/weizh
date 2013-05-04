@@ -42,7 +42,7 @@
 -(IBAction)goBack:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
 }
-//这个有点难度
+
 -(IBAction)getYanZheng:(id)sender{
     NSString* urlString = [NSString stringWithFormat:@"http://uc.chexingle.com:8080/car/verCode/getCode/"];
     ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
@@ -78,7 +78,7 @@
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.3];
     //loginBg.center = CGPointMake(loginBg.center.x, [yCenterPos floatValue]);
-  //-  homeBgView.center = CGPointMake(homeBgView.center.x, [yCenterPos floatValue]);
+  	//-  homeBgView.center = CGPointMake(homeBgView.center.x, [yCenterPos floatValue]);
 
 	[UIView commitAnimations];
 }
@@ -98,7 +98,6 @@
         passwordNum.frame = CGRectMake(passwordNum.frame.origin.x,passwordNum.frame.origin.y-20, textField.frame.size.width, textField.frame.size.height);
         [UIView commitAnimations];
     }
-    
 }
 
 //该方法为完成输入后要调用的代理方法：虚拟键盘隐藏后，要恢复到之前的文本框地方
@@ -129,16 +128,12 @@
     {
         [againPasswordNum resignFirstResponder];
     }
-    
     [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:230.0f] waitUntilDone:NO];
     return YES;
 }
-
 -(void)dealloc{
     [titleStr release];
     [super dealloc];
 }
-
-
 
 @end

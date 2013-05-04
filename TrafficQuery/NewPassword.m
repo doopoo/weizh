@@ -50,6 +50,12 @@
    
 
 }
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [oldPwd resignFirstResponder];
+    [password resignFirstResponder];
+    [againPwd resignFirstResponder];
+}
 //成功
 -(void)succeed:(ASIHTTPRequest*)request{
     //成功登陆,并进行转场

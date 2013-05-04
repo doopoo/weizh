@@ -7,16 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import "IndexViewController.h"
 
 @implementation AppDelegate
 @synthesize firstLaunch;
 @synthesize homeIntroduce;
-@synthesize navigationController, window;
+@synthesize  window;
 
 
 - (void)dealloc
 {
-    [navigationController release];
     [window release];
     [super dealloc];
 }
@@ -27,7 +27,7 @@
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]){//如果不是第一次
         NSLog(@"everLaunched = %d",[[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]);
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"everLaunched"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
     }
     else{
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
@@ -36,14 +36,20 @@
     
 //    self.window.backgroundColor = [UIColor blackColor];
 //    application.statusBarStyle = UIStatusBarStyleBlackOpaque;
-    [window addSubview:navigationController.view];
+//    [window addSubview:navigationController.view];
     
     [WXApi registerApp:@"wx1776876183a5c08f"];
     
     self.firstLaunch = YES;
     
-    
-   [self addHomeIntroduceWithLogoutStatus:NO];
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
+        [self addHomeIntroduceWithLogoutStatus:NO];
+    }else{
+        indexViewController = [[[IndexViewController alloc] init] initWithNibName:@"IndexViewController" bundle:nil];
+        UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:indexViewController];
+        self.window.rootViewController = nav;
+        [nav setNavigationBarHidden:TRUE];
+    }
     
     
 //  NSLog(@"everLaunched再一次 = %d",[[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]);
@@ -81,11 +87,13 @@
     homeIntroduce = [[HomeIntroduce alloc] init];
    // homeIntroduce = [[HomeIntroduce alloc] initWithNibName:@"HomeIntroduce" bundle:nil];
    //iphone5
-    homeIntroduce.view.frame = CGRectMake(0, 20, 320, 460);//320*480
+    CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
+    homeIntroduce.view.frame = CGRectMake(0, 0, 320, screenHeight-20);//320*480
     AppDelegate* del = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     del.window.backgroundColor = [UIColor blackColor];
     
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:homeIntroduce];
+    
     self.window.rootViewController = nav;
     [nav setNavigationBarHidden:TRUE];
     

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeIntroduce.h"
+@class IndexViewController;
 
 #import "WXApi.h"
 
@@ -15,15 +16,15 @@
     BOOL firstLanch;//是否是第一次启动
     
     UIWindow* window;
-    UINavigationController* navigationController;
+//    UINavigationController* navigationController;
     
     HomeIntroduce* homeIntroduce;
     enum WXScene _scene;
    
+    IndexViewController* indexViewController;
 }
 
 @property (retain, nonatomic)IBOutlet UIWindow *window;
-@property (retain, nonatomic)IBOutlet UINavigationController* navigationController;
 @property (assign, nonatomic)BOOL firstLaunch;
 @property (retain, nonatomic)HomeIntroduce* homeIntroduce;
 

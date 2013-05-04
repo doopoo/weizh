@@ -78,15 +78,33 @@
         ((ModifyCell*)cell).commonDelegate = self;
         cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_more_item_middle.png"]];
 
-        
+    cell.selectionStyle=UITableViewCellSelectionStyleGray;
     
     return cell;
     
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    NSString* tempImageStr;
+    NSString* tempCarNumStr;
+    NSString* tempCarJiaStr;
+    self.carDictionary = [self.carMutableArray objectAtIndex:indexPath.row];
+    tempCarNumStr = [[self.carDictionary objectForKey:@"carNum"] uppercaseString];
+    NSMutableString* yu = [NSMutableString stringWithFormat:@"豫"];
+    [yu appendString:tempCarNumStr];
+    tempCarJiaStr = [self.carDictionary objectForKey:@"carJiaNum"];
+    tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
+    [self showModifyVC:yu carJia:tempCarJiaStr];
+    
+}
+-(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return 65.0f;
+}
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
 
     return [[NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH] count];
-    
 }
 
 - (void)didReceiveMemoryWarning

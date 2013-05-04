@@ -28,15 +28,16 @@
     [super viewDidLoad];
     UIImageView *topView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"top_panal_background.png"]];
     [topView setFrame:CGRectMake(0, 0, 320, 50)];
-    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(5, 6, 50, 30)];
+    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 8, 50, 30)];
     [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_a.png"] forState:UIControlStateNormal];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_b.png"] forState:UIControlStateSelected];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_b.png"] forState:UIControlStateHighlighted];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [backButton setTitle:@"返回" forState:UIControlStateNormal];
     UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(140, 8, 120, 40)];
     [titleLable setBackgroundColor:[UIColor clearColor]];
     titleLable.text = @"关于我们";
+    titleLable.font = [UIFont systemFontOfSize:20];
     [self.view addSubview:topView];
     [self.view addSubview:titleLable];
     [self.view addSubview:backButton];

@@ -30,6 +30,19 @@
     <key>RSA public key</key>
     <string>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCftc80o24VwSTYGsg29d4RfGafK0TXq2mIhx28u5wVST89h5yyhDMJ8kngZGWSGu/Q1iyVrm4V0FG1G5j7VwqGdCFs6Fk/IBU8puGVI/C9bhofqe7inKcydrQQ6Un5TMgMDeKk16oWY2GDVDAeNOD8gJrgrH4vFUVtjs61OmSu1wIDAQAB</string>
     
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>sinaweibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>sinaweibosso.1986722134</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>

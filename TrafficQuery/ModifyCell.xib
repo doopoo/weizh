@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C3103</string>
-		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<int key="IBDocument.SystemTarget">1536</int>
+		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">2083</string>
+			<string key="NS.object.0">1930</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -44,7 +44,7 @@
 							<object class="IBUILabel" id="631745542">
 								<reference key="NSNextResponder" ref="162631581"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{115, 29}, {135, 21}}</string>
+								<string key="NSFrame">{{98, 20}, {135, 21}}</string>
 								<reference key="NSSuperview" ref="162631581"/>
 								<reference key="NSNextKeyView" ref="427383735"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -78,7 +78,7 @@
 							<object class="IBUILabel" id="543633596">
 								<reference key="NSNextResponder" ref="162631581"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{115, 68}, {91, 21}}</string>
+								<string key="NSFrame">{{115, 47}, {91, 21}}</string>
 								<reference key="NSSuperview" ref="162631581"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -97,7 +97,7 @@
 							<object class="IBUIButton" id="427383735">
 								<reference key="NSNextResponder" ref="162631581"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{237, 23}, {27, 33}}</string>
+								<string key="NSFrame">{{224, 18}, {18, 28}}</string>
 								<reference key="NSSuperview" ref="162631581"/>
 								<reference key="NSNextKeyView" ref="543633596"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -131,7 +131,7 @@
 							<object class="IBUIImageView" id="838522727">
 								<reference key="NSNextResponder" ref="162631581"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{20, 10}, {80, 60}}</string>
+								<string key="NSFrame">{{20, 10}, {56, 42}}</string>
 								<reference key="NSSuperview" ref="162631581"/>
 								<reference key="NSNextKeyView" ref="631745542"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -139,7 +139,7 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 89}</string>
+						<string key="NSFrameSize">{300, 64}</string>
 						<reference key="NSSuperview" ref="394716806"/>
 						<reference key="NSNextKeyView" ref="838522727"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
@@ -154,7 +154,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 90}</string>
+				<string key="NSFrameSize">{300, 65}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="162631581"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -222,10 +222,10 @@
 						<int key="objectID">2</int>
 						<reference key="object" ref="394716806"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="631745542"/>
 							<reference ref="427383735"/>
 							<reference ref="543633596"/>
 							<reference ref="838522727"/>
+							<reference ref="631745542"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -277,6 +277,6 @@
 			<string key="NS.key.0">prompt.png</string>
 			<string key="NS.object.0">{18, 28}</string>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">2083</string>
+		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>
 </archive>

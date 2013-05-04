@@ -15,6 +15,7 @@
 @class carCommon;
 @class AboutUSViewController;
 @class UserViewController;
+@class RemindViewController;
 
 @interface IndexViewController : UIViewController{
     MBProgressHUD* HUD;
@@ -24,6 +25,7 @@
     carCommon* managerCars;
     
     UserViewController* userViewController;
+    RemindViewController* remindViewController;
     
     UIView* rightView;
     BOOL show;

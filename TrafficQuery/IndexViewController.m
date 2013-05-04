@@ -20,6 +20,7 @@
 #import "CarManager.h"
 #import "UserViewController.h"
 #import "ShareViewController.h"
+#import "RemindViewController.h"
 
 #define CARLISTFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/CarList.plist"]
 
@@ -59,22 +60,23 @@
     // Do any additional setup after loading the view from its nib.
     self.mainTableView.scrollEnabled = NO;
     //景
-    btn_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
+    btn_shade = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, screenHeight)];
     [btn_shade addTarget:self action:@selector(setting_pressed:) forControlEvents:UIControlEventTouchDown];
     [btn_shade setBackgroundColor:[UIColor blackColor]];
     btn_shade.alpha = 0.5;
     [self.view addSubview:btn_shade];
     btn_shade.hidden = YES;
     show = YES;
-    newView = [[view alloc] initWithFrame:CGRectMake(0, 0, 320,480)];
+    newView = [[view alloc] initWithFrame:CGRectMake(0, 0, 320,screenHeight)];
     newView.backgroundColor = [UIColor clearColor];
     
     //右边的目录
-    rightView=[[UIView alloc]initWithFrame:CGRectMake(320, 0, 120, 460)];
+    rightView=[[UIView alloc]initWithFrame:CGRectMake(320, 0, 120, screenHeight-20)];
     [rightView setBackgroundColor:[UIColor clearColor]];
     UIImage *image=[UIImage imageNamed:@"choose.png"];
     UIImageView *imageview=[[UIImageView alloc]initWithImage:image];
-    imageview.frame=CGRectMake(0, 0, 120, 460);
+    imageview.frame=CGRectMake(0, 0, 120, screenHeight-20);
     
     UIButton *carManagerButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 120, 70)];
     [carManagerButton setTitle:@"车辆管理" forState:UIControlStateNormal];
@@ -105,6 +107,7 @@
     remindView.image = [UIImage imageNamed:@"icon_remind.png"];
     [remindButton addSubview:remindView];
     [remindView release];
+    [remindButton addTarget:self action:@selector(remind:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *userInfButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 138, 120, 70)];
     [userInfButton setTitle:@"个人信息" forState:UIControlStateNormal];
@@ -120,7 +123,7 @@
     [userInfView release];
     [userInfButton addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-139, 120, 71)];
+    UIButton *shareButton = [[UIButton alloc]initWithFrame:CGRectMake(0, screenHeight-20-139, 120, 71)];
     [shareButton setTitle:@"分享朋友" forState:UIControlStateNormal];
     [shareButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     shareButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -134,7 +137,7 @@
     [shareView release];
     [shareButton addTarget:self action:@selector(share:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *aboutUSButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 460-70, 120, 70)];
+    UIButton *aboutUSButton = [[UIButton alloc]initWithFrame:CGRectMake(0, screenHeight-20-70, 120, 70)];
     [aboutUSButton setTitle:@"关于我们" forState:UIControlStateNormal];
     [aboutUSButton setTitleColor:[UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     aboutUSButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -171,8 +174,17 @@
     }
     
     self.carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
+    
+   // NSLog(@"self.carMutableArray = %@", [[self.carMutableArray objectAtIndex:1]objectForKey:@"carImageNum"]);
     NSLog(@"self.carMutableArray = %@", self.carMutableArray);
 }
+-(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0)return 65.0f;
+    if(indexPath.section == 1)return 50.0f;
+    return 0.0f;
+}
+
+
 //TableViewController
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
     if(section == 1)
@@ -229,6 +241,7 @@
         cell = (AddButtonCell*)[tableView dequeueReusableCellWithIdentifier:@"AddButtonCell"];
         if(!cell){
             cell = [[[NSBundle mainBundle] loadNibNamed:@"AddButtonCell" owner:self options:nil] lastObject];
+            cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"btn_cell.png"]];
         }
         ((AddButtonCell*)cell).indexVC = self;
     }
@@ -240,10 +253,29 @@
 //    return 1;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSString* tempImageStr;
+    NSString* tempCarNumStr;
+    NSString* tempCarJiaStr;
+    self.carDictionary = [self.carMutableArray objectAtIndex:indexPath.row];
+    tempCarNumStr = [[self.carDictionary objectForKey:@"carNum"] uppercaseString];
+    tempCarJiaStr = [self.carDictionary objectForKey:@"carJiaNum"];
+    tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
+    [self showCarInfoViewController:tempCarNumStr carJaNumber:tempCarJiaStr];
+    
+}
+
 -(void)managerCars:(id)sender{
     managerCars = [[carCommon alloc] initWithNibName:@"carCommon" bundle:nil];
     [self.navigationController pushViewController:managerCars animated:YES];
     
+}
+-(void)remind:(id)sender{
+    remindViewController = [[RemindViewController alloc] initWithNibName:@"RemindViewController" bundle:nil];
+    [self.navigationController pushViewController:remindViewController animated:YES];
+    [self setting_pressed:self];
 }
 
 -(void)login:(id)sender{
@@ -306,13 +338,14 @@
 -(IBAction)setting_pressed:(id)sender{
     [UIView beginAnimations:@"movement" context:nil];
     [UIView setAnimationDuration:0.5f];
+    CGFloat screenHeight = [[UIScreen mainScreen]bounds].size.height;
     // show = YES;
     if(show){
-        rightView.frame = CGRectMake(320-120, 0, 120, 480);
+        rightView.frame = CGRectMake(320-120, 0, 120, screenHeight);
         show = NO;
         btn_shade.hidden = NO;
     }else{
-        rightView.frame = CGRectMake(320, 0, 120, 480);
+        rightView.frame = CGRectMake(320, 0, 120, screenHeight);
         show = YES;
         btn_shade.hidden = YES;
     }

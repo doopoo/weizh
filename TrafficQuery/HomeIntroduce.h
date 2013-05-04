@@ -23,6 +23,7 @@
 @class LoginViewController;
 @class AboutUSViewController;
 @class UserViewController;
+@class RemindViewController;
 
 @interface HomeIntroduce : UIViewController<UIScrollViewDelegate,UITextFieldDelegate>
 {
@@ -31,12 +32,15 @@
     AboutUSViewController* aboutUSViewController;
     
     UserViewController* userViewController;
+    RemindViewController* remindViewController;
     
     UIView* rightView;
+    UIView* xingshizhengView;
+    UIImageView *xingshi;
     BOOL show;
     view* newView;
     UIButton* btn_shade;
-    
+    UIButton* tiShi_shade;
     carCommon* managerCars;
     
     CarViewController* carViewController;
@@ -63,9 +67,6 @@
     NSMutableDictionary* carDataDict;
     NSMutableArray* carListArr;
  
-    
-
-    
 }
 @property(nonatomic, retain)NSMutableArray* carListArr;
 

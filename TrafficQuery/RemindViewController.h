@@ -7,9 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "remindCell.h"
 
-@interface RemindViewController : UIViewController
+@interface RemindViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,remindCelldelegate>{
+    NSMutableDictionary* carDictionary;//车辆信息
+    NSMutableArray* carMutableArray;
+    UITableView* mainTableView;
+    int n;
+     BOOL isON;
+    NSString *loginIsYes;
+}
+@property(nonatomic, retain)IBOutlet UITableView* mainTableView;
+@property(nonatomic, retain)NSMutableDictionary* carDictionary;
+@property(nonatomic, retain)NSMutableArray* carMutableArray;
 
+-(void)initMainTableView;
 -(IBAction)remindBtn:(id)sender;
 -(IBAction)goBack:(id)sender;
+-(IBAction)baoche:(id)sender;
 @end
