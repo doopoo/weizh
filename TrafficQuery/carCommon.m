@@ -78,20 +78,25 @@
         ((ModifyCell*)cell).commonDelegate = self;
         cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_more_item_middle.png"]];
 
-        
+    cell.selectionStyle=UITableViewCellSelectionStyleGray;
     
     return cell;
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
+
+    NSString* tempImageStr;
+    NSString* tempCarNumStr;
+    NSString* tempCarJiaStr;
+    self.carDictionary = [self.carMutableArray objectAtIndex:indexPath.row];
+    tempCarNumStr = [[self.carDictionary objectForKey:@"carNum"] uppercaseString];
+    NSMutableString* yu = [NSMutableString stringWithFormat:@"豫"];
+    [yu appendString:tempCarNumStr];
+    tempCarJiaStr = [self.carDictionary objectForKey:@"carJiaNum"];
+    tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
+    [self showModifyVC:yu carJia:tempCarJiaStr];
     
-     ModifyViewController *mmmm = [[ModifyViewController alloc] initWithNibName:nil bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:mmmm animated:YES];
-     
 }
 -(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -100,7 +105,6 @@
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section{
 
     return [[NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH] count];
-    
 }
 
 - (void)didReceiveMemoryWarning

@@ -48,6 +48,7 @@
     	for (int j=0; j<=n; j++)
         {
         	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
+
         	NSLog(@"~!%@",myBtn1);
 
             
@@ -56,6 +57,7 @@
             [self.carMutableArray replaceObjectAtIndex:j withObject:tempDic];
             [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
             myBtn1.selected = NO;
+
         }
         
         [myBtn setBackgroundColor:[UIColor clearColor]];

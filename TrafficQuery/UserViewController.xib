@@ -75,14 +75,12 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">back_btn_a.png</string>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="813558362">
-							<string key="name">STHeitiSC-Light</string>
-							<string key="family">Heiti SC</string>
-							<int key="traits">0</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="802421680">
+							<int key="type">2</int>
 							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="818637201">
-							<string key="NSName">STHeitiSC-Light</string>
+						<object class="NSFont" key="IBUIFont" id="364075954">
+							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -143,13 +141,13 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">universal_btn_a.png</string>
 						</object>
-						<reference key="IBUIFontDescription" ref="813558362"/>
-						<reference key="IBUIFont" ref="818637201"/>
+						<reference key="IBUIFontDescription" ref="802421680"/>
+						<reference key="IBUIFont" ref="364075954"/>
 					</object>
 					<object class="IBUIImageView" id="549061584">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 50}, {320, 410}}</string>
+						<string key="NSFrame">{{0, 50}, {320, 518}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="874072761"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -306,6 +304,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{61, 337}, {199, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>

@@ -35,10 +35,12 @@
     RemindViewController* remindViewController;
     
     UIView* rightView;
+    UIView* xingshizhengView;
+    UIImageView *xingshi;
     BOOL show;
     view* newView;
     UIButton* btn_shade;
-    
+    UIButton* tiShi_shade;
     carCommon* managerCars;
     
     CarViewController* carViewController;
