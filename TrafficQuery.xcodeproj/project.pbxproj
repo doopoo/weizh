@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+ // !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -812,7 +812,6 @@
 		81FA5442172BDBC000510020 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		81FA5443172BDBC000510020 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		81FA5444172BDBC000510020 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
-=======
 		7BF660F2172C9A31000528E0 /* remindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remindCell.h; sourceTree = "<group>"; };
 		7BF660F3172C9A31000528E0 /* remindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remindCell.m; sourceTree = "<group>"; };
 		7BF660F4172C9A31000528E0 /* remindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = remindCell.xib; sourceTree = "<group>"; };
@@ -834,7 +833,6 @@
 		7BFF9778172BD8E300B779DF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		7BFF9779172BD8E300B779DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		7BFF977C172BD93200B779DF /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
->>>>>>> 90ff1b0ee339c3ffb1c213fd18dc4d729f29b738
 		8448D8161705C785002260AE /* HomeIntroduce.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeIntroduce.xib; sourceTree = "<group>"; };
 		8448D8461705DFD9002260AE /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
 		8448D8471705DFD9002260AE /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
@@ -1580,7 +1578,8 @@
 				81FA5444172BDBC000510020 /* RSADataVerifier.m */,
 			);
 			path = utilities;
-=======
+			sourceTree = "<group>";
+		};
 		7BFF971F172BD45700B779DF /* 分享图标 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1594,7 +1593,6 @@
 				7BFF9727172BD45700B779DF /* weixin.png */,
 			);
 			path = "分享图标";
->>>>>>> 90ff1b0ee339c3ffb1c213fd18dc4d729f29b738
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
