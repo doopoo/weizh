@@ -55,7 +55,7 @@
 {
     [super viewDidLoad];
     UIImageView *bgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"all_bg.png"]];
-    [bgView setFrame:CGRectMake(0,50, 320, 460)];
+   // [bgView setFrame:CGRectMake(0,50, 320, 460)];
     [self.view addSubview:bgView];
     UIImageView *topView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"top_panal_background.png"]];
     [topView setFrame:CGRectMake(0, 0, 320, 50)];
