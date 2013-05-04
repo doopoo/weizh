@@ -11,6 +11,7 @@
 @class IndexViewController;
 @class RegisterViewController;
 @class UserViewController;
+@class VIPViewController;
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>{
     MBProgressHUD* HUD;
@@ -20,6 +21,8 @@
     RegisterViewController* registerViewController;
     UIImageView* backgroundImageView;
     UserViewController* userViewController;
+    
+    VIPViewController* vipViewController;
 }
 
 @property(nonatomic, retain)IBOutlet UIImageView* backgroundImageView;

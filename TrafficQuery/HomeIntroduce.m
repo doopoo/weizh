@@ -342,6 +342,7 @@
     }
     [self aboutSet:self];
 }
+//要进行做判断
 -(void)remind:(id)sender{
     remindViewController = [[RemindViewController alloc] initWithNibName:@"RemindViewController" bundle:nil];
     [self.navigationController pushViewController:remindViewController animated:YES];
@@ -393,12 +394,13 @@
     if(![fileManage fileExistsAtPath:CARLISTFILEPATH]){
         [fileManage createFileAtPath:CARLISTFILEPATH contents:nil attributes:nil];
     }
-    //还要保存其它数据
+    //还要保存其它数据,添加一个字段
     NSDictionary* carDict = [[NSDictionary alloc] initWithObjectsAndKeys:
                              self.carNumberField.text,@"carNum",
                              self.carJaField.text, @"carJiaNum",
                              self.iconNumStr,@"carImageNum",
                              self.selectIconLabel.text, @"carImage",
+                             @"NO",@"isRemind",
                              nil];
     
 //    [[CarManager sharedInstance].carsArr addObject:carDict];
@@ -486,7 +488,7 @@
     NSString * toBeString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     cs = [[NSCharacterSet characterSetWithCharactersInString:NUMBERS] invertedSet];
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
-    BOOL basicTest = [string isEqualToString:filtered];
+//    BOOL basicTest = [string isEqualToString:filtered];
     
     if (carJaField== textField )
     {

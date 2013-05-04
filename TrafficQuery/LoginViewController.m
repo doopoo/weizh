@@ -11,6 +11,7 @@
 #import "RegisterViewController.h"
 #import "UserViewController.h"
 #import "CarManager.h"
+#import "VIPViewController.h"
 #import "ASIFormDataRequest.h"
 #import "ASIHTTPRequest.h"
 #import "MBProgressHUD.h"
@@ -152,15 +153,26 @@
         if(![userFile fileExistsAtPath:USERFILEPATH]){
             [userFile createFileAtPath:USERFILEPATH contents:nil attributes:nil];
         }
-        NSDictionary* userDict = [[NSDictionary alloc] initWithObjectsAndKeys:self.telphoneTextField.text,@"userID",
-                                  payType, @"payType", flag, @"flag", end, @"end", status, @"status",nil];
+        NSDictionary* userDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                  self.telphoneTextField.text,@"userID",
+                                  payType, @"payType",
+                                  flag, @"flag",
+                                  end, @"end",
+                                  status, @"status",nil];
         [userDict writeToFile:USERFILEPATH atomically:YES];
         
-         
+         //进行转场
+        NSUserDefaults* loginFile = [NSUserDefaults standardUserDefaults];
+        if([[loginFile objectForKey:@"hasLogin"] isEqualToString:@"NO"]){
+            vipViewController = [[VIPViewController alloc] initWithNibName:@"VIPViewController" bundle:nil];
+            [self.navigationController pushViewController:vipViewController animated:YES];
+            [loginFile setValue:@"YES" forKey:@"hasLogin"];
+            
+        }else{
         userViewController = [[UserViewController alloc] initWithNibName:@"UserViewController" bundle:nil];
 
         [self.navigationController pushViewController:userViewController animated:YES];
-       
+        }
         
         
         

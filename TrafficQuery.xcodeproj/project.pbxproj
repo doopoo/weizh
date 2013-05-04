@@ -50,6 +50,10 @@
 		0D92D113172A240D00F11507 /* TCWBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D92D0F2172A240D00F11507 /* TCWBRequest.m */; };
 		0D92D117172A247800F11507 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D92D115172A247800F11507 /* ShareViewController.m */; };
 		0D92D118172A247800F11507 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D92D116172A247800F11507 /* ShareViewController.xib */; };
+		7B007D0A17339A9100781E66 /* VIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B007D0817339A9000781E66 /* VIPViewController.m */; };
+		7B007D0B17339A9100781E66 /* VIPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B007D0917339A9100781E66 /* VIPViewController.xib */; };
+		7B007D101733A2BC00781E66 /* UpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B007D0E1733A2BB00781E66 /* UpgradeViewController.m */; };
+		7B007D111733A2BC00781E66 /* UpgradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B007D0F1733A2BC00781E66 /* UpgradeViewController.xib */; };
 		7B032A9B1728CAC5005F2E87 /* weifa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B032A9A1728CAC5005F2E87 /* weifa.txt */; };
 		7B04175A1725045F00DE2E6F /* ModifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0417591725045D00DE2E6F /* ModifyCell.m */; };
 		7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B04175D172504C000DE2E6F /* ModifyCell.xib */; };
@@ -413,6 +417,12 @@
 		0D92D114172A247800F11507 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		0D92D115172A247800F11507 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		0D92D116172A247800F11507 /* ShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
+		7B007D0717339A9000781E66 /* VIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPViewController.h; sourceTree = "<group>"; };
+		7B007D0817339A9000781E66 /* VIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPViewController.m; sourceTree = "<group>"; };
+		7B007D0917339A9100781E66 /* VIPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPViewController.xib; sourceTree = "<group>"; };
+		7B007D0D1733A2BA00781E66 /* UpgradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeViewController.h; sourceTree = "<group>"; };
+		7B007D0E1733A2BB00781E66 /* UpgradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeViewController.m; sourceTree = "<group>"; };
+		7B007D0F1733A2BC00781E66 /* UpgradeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpgradeViewController.xib; sourceTree = "<group>"; };
 		7B032A9A1728CAC5005F2E87 /* weifa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weifa.txt; sourceTree = "<group>"; };
 		7B0417581725045900DE2E6F /* ModifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyCell.h; sourceTree = "<group>"; };
 		7B0417591725045D00DE2E6F /* ModifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyCell.m; sourceTree = "<group>"; };
@@ -1178,6 +1188,12 @@
 				7BF660F5172C9A31000528E0 /* RemindViewController.h */,
 				7BF660F6172C9A31000528E0 /* RemindViewController.m */,
 				7BF660F7172C9A31000528E0 /* RemindViewController.xib */,
+				7B007D0717339A9000781E66 /* VIPViewController.h */,
+				7B007D0817339A9000781E66 /* VIPViewController.m */,
+				7B007D0917339A9100781E66 /* VIPViewController.xib */,
+				7B007D0D1733A2BA00781E66 /* UpgradeViewController.h */,
+				7B007D0E1733A2BB00781E66 /* UpgradeViewController.m */,
+				7B007D0F1733A2BC00781E66 /* UpgradeViewController.xib */,
 				846D7576171C443400E813A4 /* view.h */,
 				846D7577171C443400E813A4 /* view.m */,
 				7B31C88717164BC500A3F2BA /* IndexViewController.h */,
@@ -1649,6 +1665,8 @@
 				7BF66101172CA759000528E0 /* middle.png in Resources */,
 				7BF66104172CA883000528E0 /* ModifyViewController.xib in Resources */,
 				7BF6610C172CE43B000528E0 /* btn_cell.png in Resources */,
+				7B007D0B17339A9100781E66 /* VIPViewController.xib in Resources */,
+				7B007D111733A2BC00781E66 /* UpgradeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1728,6 +1746,8 @@
 				7BDA8ED1172A788600F9E2BA /* UserViewController.m in Sources */,
 				7BF660F8172C9A31000528E0 /* remindCell.m in Sources */,
 				7BF660FA172C9A31000528E0 /* RemindViewController.m in Sources */,
+				7B007D0A17339A9100781E66 /* VIPViewController.m in Sources */,
+				7B007D101733A2BC00781E66 /* UpgradeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1827,7 +1847,7 @@
 					armv7,
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: dan yu (62ZC34F672)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HENAN CHENGLIAN INDUSTRIAL CO.LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficQuery/TrafficQuery-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1839,7 +1859,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7D8FC2C0-1B47-48B7-86E5-1E4EBDC8ACEA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52564048-6FBA-4404-9D49-1F92854C4ED4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1853,7 +1873,7 @@
 					armv7,
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: dan yu (62ZC34F672)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HENAN CHENGLIAN INDUSTRIAL CO.LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrafficQuery/TrafficQuery-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SDK_DIR}/usr/include/libxml2";
@@ -1865,7 +1885,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7D8FC2C0-1B47-48B7-86E5-1E4EBDC8ACEA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52564048-6FBA-4404-9D49-1F92854C4ED4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

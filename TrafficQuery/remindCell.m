@@ -12,6 +12,7 @@
 @implementation remindCell
 @synthesize carImageView, carNumberLabel, remindViewControllerDelegate;
 @synthesize delegate=_delegate;
+@synthesize kaiguan;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -32,10 +33,11 @@
     [carImageView release];
     [carNumberLabel release];
    // [remindViewControllerDelegate release];
-    [_kaiguan release];
+    [kaiguan release];
     [super dealloc];
    
 }
+
 
 -(IBAction)remind:(UIButton *)sender{
     

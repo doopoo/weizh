@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "remindCell.h"
+@class LoginViewController;
 
 @interface RemindViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,remindCelldelegate>{
     NSMutableDictionary* carDictionary;//车辆信息
     NSMutableArray* carMutableArray;
     UITableView* mainTableView;
     int n;
-     BOOL isON;
+    BOOL isON;
     NSString *loginIsYes;
+    
+    LoginViewController* loginViewController;
+    NSDictionary* userDic;
 }
 @property(nonatomic, retain)IBOutlet UITableView* mainTableView;
 @property(nonatomic, retain)NSMutableDictionary* carDictionary;
