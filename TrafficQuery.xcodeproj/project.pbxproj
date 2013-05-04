@@ -715,7 +715,6 @@
 		7BEFD9EA170AD0EA003A6E90 /* CarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfo.h; sourceTree = "<group>"; };
 		7BEFD9EB170AD0EA003A6E90 /* CarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfo.m; sourceTree = "<group>"; };
 		7BEFD9EE170AD115003A6E90 /* CarInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarInfo.xib; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		81FA53E2172BDBC000510020 /* AlixPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlixPay.h; sourceTree = "<group>"; };
 		81FA53E3172BDBC000510020 /* AlixPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlixPay.m; sourceTree = "<group>"; };
 		81FA53E4172BDBC000510020 /* AlixPayOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlixPayOrder.h; sourceTree = "<group>"; };
@@ -1463,7 +1462,6 @@
 			path = brand_images;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		81FA53E1172BDBC000510020 /* Alipay */ = {
 			isa = PBXGroup;
 			children = (
@@ -1963,7 +1961,6 @@
 				7BDA8ECD172A788600F9E2BA /* NewPassword.m in Sources */,
 				7BDA8ECF172A788600F9E2BA /* RegisterViewController.m in Sources */,
 				7BDA8ED1172A788600F9E2BA /* UserViewController.m in Sources */,
-<<<<<<< HEAD
 				81FA5445172BDBC000510020 /* AlixPay.m in Sources */,
 				81FA5446172BDBC000510020 /* AlixPayOrder.m in Sources */,
 				81FA5447172BDBC000510020 /* AlixPayResult.m in Sources */,
@@ -1975,10 +1972,8 @@
 				81FA544F172BDBC000510020 /* openssl_wrapper.m in Sources */,
 				81FA5450172BDBC000510020 /* RSADataSigner.m in Sources */,
 				81FA5451172BDBC000510020 /* RSADataVerifier.m in Sources */,
-=======
 				7BF660F8172C9A31000528E0 /* remindCell.m in Sources */,
 				7BF660FA172C9A31000528E0 /* RemindViewController.m in Sources */,
->>>>>>> 90ff1b0ee339c3ffb1c213fd18dc4d729f29b738
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
