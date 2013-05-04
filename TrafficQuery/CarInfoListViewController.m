@@ -142,9 +142,7 @@
         NSMutableArray * carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
         [carMutableArray removeLastObject];
         [carMutableArray writeToFile:CARLISTFILEPATH atomically:YES];
-        
-        
-    }
+ }
     NSLog(@"%@",[request class]);//JKDictionary
 
 
@@ -197,7 +195,14 @@
     NSString* homeManyStr = [NSString stringWithFormat:@"%@", countArr];
     self.homeManyLabel.text = homeManyStr;
     NSLog(@"self.homeManyLabel.text = %@",self.homeManyLabel.text);
-
+        
+        
+        
+        if ( [self.homeManyLabel.text  isEqualToString:@"0"]) {
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"提示" message:@"您没有未裁决记录" delegate:nil cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
    
     self.data = carArrays;
 
@@ -241,11 +246,12 @@
     self.countMoneyLabel.text = [NSString stringWithFormat:@"%d",allMoney];
     
     self.whichCarLabel.text = self.carName;
+
     [self.mainTabView reloadData];
     }
        
   }
-    
+
 }
 // 请求失败，获取 error
 -(void)requestWentWrong:(ASIHTTPRequest*)request{

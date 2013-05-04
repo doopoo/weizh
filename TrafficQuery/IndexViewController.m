@@ -252,6 +252,20 @@
 //    return 1;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSString* tempImageStr;
+    NSString* tempCarNumStr;
+    NSString* tempCarJiaStr;
+    self.carDictionary = [self.carMutableArray objectAtIndex:indexPath.row];
+    tempCarNumStr = [[self.carDictionary objectForKey:@"carNum"] uppercaseString];
+    tempCarJiaStr = [self.carDictionary objectForKey:@"carJiaNum"];
+    tempImageStr = [self.carDictionary objectForKey:@"carImageNum"];
+    [self showCarInfoViewController:tempCarNumStr carJaNumber:tempCarJiaStr];
+    
+}
+
 -(void)managerCars:(id)sender{
     managerCars = [[carCommon alloc] initWithNibName:@"carCommon" bundle:nil];
     [self.navigationController pushViewController:managerCars animated:YES];
