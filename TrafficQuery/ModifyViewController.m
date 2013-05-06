@@ -146,7 +146,7 @@
     carPaiImageView.image = [UIImage imageNamed:carImageStr];
     carJiaTextField.text = carJiaStr;
     carPaiTextField.text = carPaiStr;
-    
+    savepai=[[NSString alloc]initWithString:self.carPaiTextField.text];
     carJiaTextField.delegate=self;
     
     UITapGestureRecognizer* tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
@@ -189,10 +189,10 @@
         NSString* tempCarNum = [[[self.carMutableArray objectAtIndex:i] objectForKey :@"carNum"] uppercaseString];
         NSMutableString* yu = [NSMutableString stringWithFormat:@"豫"];
         [yu appendString:tempCarNum];
-        NSLog(@"carPaiStr = %@", carPaiStr);
-        NSLog(@"yu = %@", yu);
-        NSLog(@"self.carImageStr = %@",self.carImageStr);
-        if([carPaiStr isEqualToString:yu])
+//        NSLog(@"carPaiStr = %@", carPaiStr);
+//        NSLog(@"yu = %@", yu);
+//        NSLog(@"self.carImageStr = %@",self.carImageStr);
+        if([savepai isEqualToString:yu])
         {//写入数据库中
             NSLog(@"self.carImageStr = %@",self.carImageStr);
             NSLog(@"self.carNameLabel.text = %@",self.carNameLabel.text);
@@ -264,7 +264,7 @@
     [carJiaStr release];
     [carPaiStr release];
     [carPaiImageView release];
-    
+    [savepai release];
     [carNameLabel release];
     [super dealloc];
 }

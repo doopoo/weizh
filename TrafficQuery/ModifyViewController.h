@@ -23,6 +23,7 @@
     NSString* carNameStr;
     NSString* carPaiStr;
     NSString* carJiaStr;
+    NSString* savepai;
     
     NSMutableDictionary* carDictionary;
     NSMutableArray* carMutableArray;

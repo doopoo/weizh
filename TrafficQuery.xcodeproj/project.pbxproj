@@ -1,4 +1,4 @@
- // !$*UTF8*$!
+// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -50,6 +50,15 @@
 		0D92D113172A240D00F11507 /* TCWBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D92D0F2172A240D00F11507 /* TCWBRequest.m */; };
 		0D92D117172A247800F11507 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D92D115172A247800F11507 /* ShareViewController.m */; };
 		0D92D118172A247800F11507 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D92D116172A247800F11507 /* ShareViewController.xib */; };
+		67FAD17B17373B9F00B542E8 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD17317373B9F00B542E8 /* news.png */; };
+		67FAD17C17373B9F00B542E8 /* sina_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD17417373B9F00B542E8 /* sina_1.png */; };
+		67FAD17D17373B9F00B542E8 /* sina_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD17517373B9F00B542E8 /* sina_2.png */; };
+		67FAD17E17373B9F00B542E8 /* sina_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD17617373B9F00B542E8 /* sina_3.png */; };
+		67FAD17F17373B9F00B542E8 /* tencent_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD17717373B9F00B542E8 /* tencent_1.png */; };
+		67FAD18017373B9F00B542E8 /* tencent_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD17817373B9F00B542E8 /* tencent_2.png */; };
+		67FAD18117373B9F00B542E8 /* tencent_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD17917373B9F00B542E8 /* tencent_3.png */; };
+		67FAD18217373B9F00B542E8 /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD17A17373B9F00B542E8 /* weixin.png */; };
+		67FAD1841737404C00B542E8 /* AboutUSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67FAD1831737404B00B542E8 /* AboutUSViewController.xib */; };
 		7B032A9B1728CAC5005F2E87 /* weifa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B032A9A1728CAC5005F2E87 /* weifa.txt */; };
 		7B04175A1725045F00DE2E6F /* ModifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0417591725045D00DE2E6F /* ModifyCell.m */; };
 		7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B04175D172504C000DE2E6F /* ModifyCell.xib */; };
@@ -161,7 +170,6 @@
 		7BD276481702BB7600A1E40D /* HomeIntroduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD276181702767100A1E40D /* HomeIntroduce.m */; };
 		7BD276751702CB0800A1E40D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD276741702CB0800A1E40D /* QuartzCore.framework */; };
 		7BDA8E9B172A1E6200F9E2BA /* AboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDA8E99172A1E6200F9E2BA /* AboutUSViewController.m */; };
-		7BDA8E9C172A1E6200F9E2BA /* AboutUSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BDA8E9A172A1E6200F9E2BA /* AboutUSViewController.xib */; };
 		7BDA8ECB172A788600F9E2BA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDA8EC0172A788600F9E2BA /* LoginViewController.m */; };
 		7BDA8ECC172A788600F9E2BA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BDA8EC1172A788600F9E2BA /* LoginViewController.xib */; };
 		7BDA8ECD172A788600F9E2BA /* NewPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDA8EC3172A788600F9E2BA /* NewPassword.m */; };
@@ -302,6 +310,17 @@
 		7BEEAF7D17150C29000CDA9B /* CarInfoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAF7B17150C29000CDA9B /* CarInfoListViewController.xib */; };
 		7BEFD9EC170AD0EA003A6E90 /* CarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFD9EB170AD0EA003A6E90 /* CarInfo.m */; };
 		7BEFD9EF170AD115003A6E90 /* CarInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BEFD9EE170AD115003A6E90 /* CarInfo.xib */; };
+		7BF660F8172C9A31000528E0 /* remindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF660F3172C9A31000528E0 /* remindCell.m */; };
+		7BF660F9172C9A31000528E0 /* remindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF660F4172C9A31000528E0 /* remindCell.xib */; };
+		7BF660FA172C9A31000528E0 /* RemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF660F6172C9A31000528E0 /* RemindViewController.m */; };
+		7BF660FB172C9A31000528E0 /* RemindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF660F7172C9A31000528E0 /* RemindViewController.xib */; };
+		7BF66101172CA759000528E0 /* middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF66100172CA759000528E0 /* middle.png */; };
+		7BF66104172CA883000528E0 /* ModifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF66103172CA882000528E0 /* ModifyViewController.xib */; };
+		7BF6610C172CE43B000528E0 /* btn_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF6610B172CE439000528E0 /* btn_cell.png */; };
+		7BFF971E172BB0DF00B779DF /* ic_more_item_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF971D172BB0DF00B779DF /* ic_more_item_middle.png */; };
+		7BFF977A172BD8E300B779DF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9778172BD8E300B779DF /* Icon@2x.png */; };
+		7BFF977B172BD8E300B779DF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9779172BD8E300B779DF /* Icon.png */; };
+		7BFF977D172BD93200B779DF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF977C172BD93200B779DF /* iTunesArtwork */; };
 		81FA5445172BDBC000510020 /* AlixPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA53E3172BDBC000510020 /* AlixPay.m */; };
 		81FA5446172BDBC000510020 /* AlixPayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA53E5172BDBC000510020 /* AlixPayOrder.m */; };
 		81FA5447172BDBC000510020 /* AlixPayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA53E7172BDBC000510020 /* AlixPayResult.m */; };
@@ -315,25 +334,6 @@
 		81FA544F172BDBC000510020 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5440172BDBC000510020 /* openssl_wrapper.m */; };
 		81FA5450172BDBC000510020 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5442172BDBC000510020 /* RSADataSigner.m */; };
 		81FA5451172BDBC000510020 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5444172BDBC000510020 /* RSADataVerifier.m */; };
-		7BF660F8172C9A31000528E0 /* remindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF660F3172C9A31000528E0 /* remindCell.m */; };
-		7BF660F9172C9A31000528E0 /* remindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF660F4172C9A31000528E0 /* remindCell.xib */; };
-		7BF660FA172C9A31000528E0 /* RemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF660F6172C9A31000528E0 /* RemindViewController.m */; };
-		7BF660FB172C9A31000528E0 /* RemindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF660F7172C9A31000528E0 /* RemindViewController.xib */; };
-		7BF66101172CA759000528E0 /* middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF66100172CA759000528E0 /* middle.png */; };
-		7BF66104172CA883000528E0 /* ModifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF66103172CA882000528E0 /* ModifyViewController.xib */; };
-		7BF6610C172CE43B000528E0 /* btn_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF6610B172CE439000528E0 /* btn_cell.png */; };
-		7BFF971E172BB0DF00B779DF /* ic_more_item_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF971D172BB0DF00B779DF /* ic_more_item_middle.png */; };
-		7BFF9728172BD45700B779DF /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9720172BD45700B779DF /* news.png */; };
-		7BFF9729172BD45700B779DF /* sina_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9721172BD45700B779DF /* sina_1.png */; };
-		7BFF972A172BD45700B779DF /* sina_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9722172BD45700B779DF /* sina_2.png */; };
-		7BFF972B172BD45700B779DF /* sina_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9723172BD45700B779DF /* sina_3.png */; };
-		7BFF972C172BD45700B779DF /* tencent_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9724172BD45700B779DF /* tencent_1.png */; };
-		7BFF972D172BD45700B779DF /* tencent_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9725172BD45700B779DF /* tencent_2.png */; };
-		7BFF972E172BD45700B779DF /* tencent_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9726172BD45700B779DF /* tencent_3.png */; };
-		7BFF972F172BD45700B779DF /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9727172BD45700B779DF /* weixin.png */; };
-		7BFF977A172BD8E300B779DF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9778172BD8E300B779DF /* Icon@2x.png */; };
-		7BFF977B172BD8E300B779DF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF9779172BD8E300B779DF /* Icon.png */; };
-		7BFF977D172BD93200B779DF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF977C172BD93200B779DF /* iTunesArtwork */; };
 		8448D8171705C785002260AE /* HomeIntroduce.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448D8161705C785002260AE /* HomeIntroduce.xib */; };
 		8448D8491705DFD9002260AE /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448D8471705DFD9002260AE /* CarViewController.m */; };
 		8448D84A1705DFD9002260AE /* CarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448D8481705DFD9002260AE /* CarViewController.xib */; };
@@ -426,6 +426,15 @@
 		0D92D114172A247800F11507 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		0D92D115172A247800F11507 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		0D92D116172A247800F11507 /* ShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
+		67FAD17317373B9F00B542E8 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		67FAD17417373B9F00B542E8 /* sina_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sina_1.png; sourceTree = "<group>"; };
+		67FAD17517373B9F00B542E8 /* sina_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sina_2.png; sourceTree = "<group>"; };
+		67FAD17617373B9F00B542E8 /* sina_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sina_3.png; sourceTree = "<group>"; };
+		67FAD17717373B9F00B542E8 /* tencent_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tencent_1.png; sourceTree = "<group>"; };
+		67FAD17817373B9F00B542E8 /* tencent_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tencent_2.png; sourceTree = "<group>"; };
+		67FAD17917373B9F00B542E8 /* tencent_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tencent_3.png; sourceTree = "<group>"; };
+		67FAD17A17373B9F00B542E8 /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
+		67FAD1831737404B00B542E8 /* AboutUSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUSViewController.xib; sourceTree = "<group>"; };
 		7B032A9A1728CAC5005F2E87 /* weifa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = weifa.txt; sourceTree = "<group>"; };
 		7B0417581725045900DE2E6F /* ModifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyCell.h; sourceTree = "<group>"; };
 		7B0417591725045D00DE2E6F /* ModifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyCell.m; sourceTree = "<group>"; };
@@ -566,7 +575,6 @@
 		7BD276741702CB0800A1E40D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7BDA8E98172A1E6100F9E2BA /* AboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUSViewController.h; sourceTree = "<group>"; };
 		7BDA8E99172A1E6200F9E2BA /* AboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUSViewController.m; sourceTree = "<group>"; };
-		7BDA8E9A172A1E6200F9E2BA /* AboutUSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUSViewController.xib; sourceTree = "<group>"; };
 		7BDA8EBF172A788600F9E2BA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7BDA8EC0172A788600F9E2BA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7BDA8EC1172A788600F9E2BA /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -715,6 +723,19 @@
 		7BEFD9EA170AD0EA003A6E90 /* CarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfo.h; sourceTree = "<group>"; };
 		7BEFD9EB170AD0EA003A6E90 /* CarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfo.m; sourceTree = "<group>"; };
 		7BEFD9EE170AD115003A6E90 /* CarInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarInfo.xib; sourceTree = "<group>"; };
+		7BF660F2172C9A31000528E0 /* remindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remindCell.h; sourceTree = "<group>"; };
+		7BF660F3172C9A31000528E0 /* remindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remindCell.m; sourceTree = "<group>"; };
+		7BF660F4172C9A31000528E0 /* remindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = remindCell.xib; sourceTree = "<group>"; };
+		7BF660F5172C9A31000528E0 /* RemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindViewController.h; sourceTree = "<group>"; };
+		7BF660F6172C9A31000528E0 /* RemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindViewController.m; sourceTree = "<group>"; };
+		7BF660F7172C9A31000528E0 /* RemindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindViewController.xib; sourceTree = "<group>"; };
+		7BF66100172CA759000528E0 /* middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle.png; sourceTree = "<group>"; };
+		7BF66103172CA882000528E0 /* ModifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyViewController.xib; sourceTree = "<group>"; };
+		7BF6610B172CE439000528E0 /* btn_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_cell.png; sourceTree = "<group>"; };
+		7BFF971D172BB0DF00B779DF /* ic_more_item_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_more_item_middle.png; sourceTree = "<group>"; };
+		7BFF9778172BD8E300B779DF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		7BFF9779172BD8E300B779DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		7BFF977C172BD93200B779DF /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		81FA53E2172BDBC000510020 /* AlixPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlixPay.h; sourceTree = "<group>"; };
 		81FA53E3172BDBC000510020 /* AlixPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlixPay.m; sourceTree = "<group>"; };
 		81FA53E4172BDBC000510020 /* AlixPayOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlixPayOrder.h; sourceTree = "<group>"; };
@@ -812,27 +833,6 @@
 		81FA5442172BDBC000510020 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		81FA5443172BDBC000510020 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		81FA5444172BDBC000510020 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
-		7BF660F2172C9A31000528E0 /* remindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remindCell.h; sourceTree = "<group>"; };
-		7BF660F3172C9A31000528E0 /* remindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remindCell.m; sourceTree = "<group>"; };
-		7BF660F4172C9A31000528E0 /* remindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = remindCell.xib; sourceTree = "<group>"; };
-		7BF660F5172C9A31000528E0 /* RemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindViewController.h; sourceTree = "<group>"; };
-		7BF660F6172C9A31000528E0 /* RemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindViewController.m; sourceTree = "<group>"; };
-		7BF660F7172C9A31000528E0 /* RemindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindViewController.xib; sourceTree = "<group>"; };
-		7BF66100172CA759000528E0 /* middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle.png; sourceTree = "<group>"; };
-		7BF66103172CA882000528E0 /* ModifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyViewController.xib; sourceTree = "<group>"; };
-		7BF6610B172CE439000528E0 /* btn_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_cell.png; sourceTree = "<group>"; };
-		7BFF971D172BB0DF00B779DF /* ic_more_item_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_more_item_middle.png; sourceTree = "<group>"; };
-		7BFF9720172BD45700B779DF /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
-		7BFF9721172BD45700B779DF /* sina_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sina_1.png; sourceTree = "<group>"; };
-		7BFF9722172BD45700B779DF /* sina_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sina_2.png; sourceTree = "<group>"; };
-		7BFF9723172BD45700B779DF /* sina_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sina_3.png; sourceTree = "<group>"; };
-		7BFF9724172BD45700B779DF /* tencent_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tencent_1.png; sourceTree = "<group>"; };
-		7BFF9725172BD45700B779DF /* tencent_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tencent_2.png; sourceTree = "<group>"; };
-		7BFF9726172BD45700B779DF /* tencent_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tencent_3.png; sourceTree = "<group>"; };
-		7BFF9727172BD45700B779DF /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
-		7BFF9778172BD8E300B779DF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		7BFF9779172BD8E300B779DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		7BFF977C172BD93200B779DF /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		8448D8161705C785002260AE /* HomeIntroduce.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeIntroduce.xib; sourceTree = "<group>"; };
 		8448D8461705DFD9002260AE /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
 		8448D8471705DFD9002260AE /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
@@ -1017,6 +1017,21 @@
 				0D92D0F2172A240D00F11507 /* TCWBRequest.m */,
 			);
 			path = TCWBEngine;
+			sourceTree = "<group>";
+		};
+		67FAD17217373B9F00B542E8 /* shareImage */ = {
+			isa = PBXGroup;
+			children = (
+				67FAD17317373B9F00B542E8 /* news.png */,
+				67FAD17417373B9F00B542E8 /* sina_1.png */,
+				67FAD17517373B9F00B542E8 /* sina_2.png */,
+				67FAD17617373B9F00B542E8 /* sina_3.png */,
+				67FAD17717373B9F00B542E8 /* tencent_1.png */,
+				67FAD17817373B9F00B542E8 /* tencent_2.png */,
+				67FAD17917373B9F00B542E8 /* tencent_3.png */,
+				67FAD17A17373B9F00B542E8 /* weixin.png */,
+			);
+			path = shareImage;
 			sourceTree = "<group>";
 		};
 		7B23F89117057D87002CE6E4 /* Cell */ = {
@@ -1266,7 +1281,7 @@
 		7BD234BD1703C4EB005D83E8 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				7BFF971F172BD45700B779DF /* 分享图标 */,
+				67FAD17217373B9F00B542E8 /* shareImage */,
 				0D92D0AA172A240C00F11507 /* TCWeiBoSDK */,
 				0D92D098172A236F00F11507 /* sinaweibo_ios_sdk */,
 				0D92D094172A233900F11507 /* libWeChatSDK.a */,
@@ -1274,7 +1289,7 @@
 				0D92D096172A233900F11507 /* WXApiObject.h */,
 				7BDA8E98172A1E6100F9E2BA /* AboutUSViewController.h */,
 				7BDA8E99172A1E6200F9E2BA /* AboutUSViewController.m */,
-				7BDA8E9A172A1E6200F9E2BA /* AboutUSViewController.xib */,
+				67FAD1831737404B00B542E8 /* AboutUSViewController.xib */,
 				0D92D114172A247800F11507 /* ShareViewController.h */,
 				0D92D115172A247800F11507 /* ShareViewController.m */,
 				0D92D116172A247800F11507 /* ShareViewController.xib */,
@@ -1580,21 +1595,6 @@
 			path = utilities;
 			sourceTree = "<group>";
 		};
-		7BFF971F172BD45700B779DF /* 分享图标 */ = {
-			isa = PBXGroup;
-			children = (
-				7BFF9720172BD45700B779DF /* news.png */,
-				7BFF9721172BD45700B779DF /* sina_1.png */,
-				7BFF9722172BD45700B779DF /* sina_2.png */,
-				7BFF9723172BD45700B779DF /* sina_3.png */,
-				7BFF9724172BD45700B779DF /* tencent_1.png */,
-				7BFF9725172BD45700B779DF /* tencent_2.png */,
-				7BFF9726172BD45700B779DF /* tencent_3.png */,
-				7BFF9727172BD45700B779DF /* weixin.png */,
-			);
-			path = "分享图标";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1856,7 +1856,6 @@
 				7B23655A171E29D5003EE002 /* carCommon.xib in Resources */,
 				7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */,
 				7B032A9B1728CAC5005F2E87 /* weifa.txt in Resources */,
-				7BDA8E9C172A1E6200F9E2BA /* AboutUSViewController.xib in Resources */,
 				0D92D0A6172A237500F11507 /* SinaWeibo.bundle in Resources */,
 				0D92D0F5172A240D00F11507 /* Language.strings in Resources */,
 				0D92D118172A247800F11507 /* ShareViewController.xib in Resources */,
@@ -1866,14 +1865,6 @@
 				7BDA8ED2172A788600F9E2BA /* UserViewController.xib in Resources */,
 				7BDA8ED6172A793500F9E2BA /* denglu shengji -bg.png in Resources */,
 				7BFF971E172BB0DF00B779DF /* ic_more_item_middle.png in Resources */,
-				7BFF9728172BD45700B779DF /* news.png in Resources */,
-				7BFF9729172BD45700B779DF /* sina_1.png in Resources */,
-				7BFF972A172BD45700B779DF /* sina_2.png in Resources */,
-				7BFF972B172BD45700B779DF /* sina_3.png in Resources */,
-				7BFF972C172BD45700B779DF /* tencent_1.png in Resources */,
-				7BFF972D172BD45700B779DF /* tencent_2.png in Resources */,
-				7BFF972E172BD45700B779DF /* tencent_3.png in Resources */,
-				7BFF972F172BD45700B779DF /* weixin.png in Resources */,
 				7BFF977A172BD8E300B779DF /* Icon@2x.png in Resources */,
 				7BFF977B172BD8E300B779DF /* Icon.png in Resources */,
 				7BFF977D172BD93200B779DF /* iTunesArtwork in Resources */,
@@ -1882,6 +1873,15 @@
 				7BF66101172CA759000528E0 /* middle.png in Resources */,
 				7BF66104172CA883000528E0 /* ModifyViewController.xib in Resources */,
 				7BF6610C172CE43B000528E0 /* btn_cell.png in Resources */,
+				67FAD17B17373B9F00B542E8 /* news.png in Resources */,
+				67FAD17C17373B9F00B542E8 /* sina_1.png in Resources */,
+				67FAD17D17373B9F00B542E8 /* sina_2.png in Resources */,
+				67FAD17E17373B9F00B542E8 /* sina_3.png in Resources */,
+				67FAD17F17373B9F00B542E8 /* tencent_1.png in Resources */,
+				67FAD18017373B9F00B542E8 /* tencent_2.png in Resources */,
+				67FAD18117373B9F00B542E8 /* tencent_3.png in Resources */,
+				67FAD18217373B9F00B542E8 /* weixin.png in Resources */,
+				67FAD1841737404C00B542E8 /* AboutUSViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

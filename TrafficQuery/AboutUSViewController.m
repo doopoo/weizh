@@ -34,10 +34,10 @@
     [backButton setBackgroundImage:[UIImage imageNamed:@"back_btn_b.png"] forState:UIControlStateHighlighted];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [backButton setTitle:@"返回" forState:UIControlStateNormal];
-    UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(140, 8, 120, 40)];
+    UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(110, 3, 140, 40)];
+    [titleLable setFont:[UIFont fontWithName:@"Helvetica-Bold" size:21]];
     [titleLable setBackgroundColor:[UIColor clearColor]];
     titleLable.text = @"关于我们";
-    titleLable.font = [UIFont systemFontOfSize:20];
     [self.view addSubview:topView];
     [self.view addSubview:titleLable];
     [self.view addSubview:backButton];
@@ -55,7 +55,7 @@
 }
 
 -(IBAction)network:(id)sender{
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://www.chenglian.com"]];
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://www.chexingle.com"]];
 }
     
 
