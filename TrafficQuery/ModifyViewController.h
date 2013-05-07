@@ -9,8 +9,22 @@
 #import <UIKit/UIKit.h>
 @class CarViewController;
 @class carCommon;
+@class CarInfoListViewController;
+@class LoginViewController;
+@class AboutUSViewController;
+@class UserViewController;
+@class RemindViewController;
+@class carCommon;
 
 @interface ModifyViewController : UIViewController<UITextFieldDelegate>{
+    
+    
+    AboutUSViewController* aboutUSViewController;
+    LoginViewController* loginViewController;
+    UserViewController* userViewController;
+    RemindViewController* remindViewController;
+    carCommon* managerCars;
+//    CarInfoListViewController;
     
     UIView* rightView;
     carCommon* myCarCommon;
@@ -23,6 +37,7 @@
     NSString* carNameStr;
     NSString* carPaiStr;
     NSString* carJiaStr;
+    NSString* savepai;
     
     NSMutableDictionary* carDictionary;
     NSMutableArray* carMutableArray;
@@ -40,7 +55,7 @@
 @property(nonatomic, retain)NSMutableDictionary* carDictionary;
 @property(nonatomic, retain)NSMutableArray* carMutableArray;
 
--(IBAction)setting:(UIButton*)sender;
+-(IBAction)setting:(id)sender;
 -(IBAction)goBack:(UIButton*)sender;
 -(IBAction)saveChange:(UIButton*)sender;
 -(IBAction)selectCar:(UIButton*)sender;

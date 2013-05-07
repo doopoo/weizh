@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "remindCell.h"
 @class LoginViewController;
+@class IndexViewController;//返回视图
+@class VIPViewController;
+
 
 @interface RemindViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,remindCelldelegate>{
     NSMutableDictionary* carDictionary;//车辆信息
@@ -20,6 +23,12 @@
     
     LoginViewController* loginViewController;
     NSDictionary* userDic;
+    IndexViewController* indexViewController;
+    VIPViewController* vipViewController;
+    
+    
+    UIButton* myBtn;
+    int m;
 }
 @property(nonatomic, retain)IBOutlet UITableView* mainTableView;
 @property(nonatomic, retain)NSMutableDictionary* carDictionary;

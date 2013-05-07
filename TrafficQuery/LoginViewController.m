@@ -10,6 +10,7 @@
 #import "IndexViewController.h"
 #import "RegisterViewController.h"
 #import "UserViewController.h"
+#import "RemindViewController.h"
 #import "CarManager.h"
 #import "VIPViewController.h"
 #import "ASIFormDataRequest.h"
@@ -163,32 +164,32 @@
         
          //进行转场
         NSUserDefaults* loginFile = [NSUserDefaults standardUserDefaults];
-        if([[loginFile objectForKey:@"hasLogin"] isEqualToString:@"NO"]){
-            vipViewController = [[VIPViewController alloc] initWithNibName:@"VIPViewController" bundle:nil];
-            [self.navigationController pushViewController:vipViewController animated:YES];
-            [loginFile setValue:@"YES" forKey:@"hasLogin"];
+        
+//        [loginFile removeObjectForKey:@"hasLogin"];
+//        [loginFile setObject:@"NO" forKey:@"hasLogin"];
+        NSLog(@"loginFile=%@",[loginFile objectForKey:@"hasLogin"]);
+//        if([[loginFile objectForKey:@"hasLogin"] isEqualToString:@"NO"]){
+        if([CarManager sharedInstance].isLogin == YES){
+            NSLog(@"userDict======%@",[userDict objectForKey:flag]);
+            if([[userDict objectForKey:flag] isEqualToString:@"1"]){//付费用户,转场到remindViewController页面
+               // NSLog(@"userDict======%@",[userDict objectForKey:flag]);
+                remindViewController = [[RemindViewController alloc] initWithNibName:@"RemindViewController" bundle:nil];
+                [self.navigationController pushViewController:remindViewController animated:YES];
+//                [loginFile setValue:@"YES" forKey:@"hasLogin"];
+                [CarManager sharedInstance].isLogin = NO;
+            }else{
+                vipViewController = [[VIPViewController alloc] initWithNibName:@"VIPViewController" bundle:nil];
+                [self.navigationController pushViewController:vipViewController animated:YES];
+//                [loginFile setValue:@"YES" forKey:@"hasLogin"];
+                [CarManager sharedInstance].isLogin = NO;
+            }
+            //如果是vip用户;
             
         }else{
         userViewController = [[UserViewController alloc] initWithNibName:@"UserViewController" bundle:nil];
 
         [self.navigationController pushViewController:userViewController animated:YES];
         }
-        
-        
-        
-        /*
-         headerDic = 
-         {
-         Connection = close;
-         "Content-Length" = 62;
-         Date = "Tue, 23 Apr 2013 03:28:07 GMT";
-         Server = "nginx/1.0.15";
-         "Set-Cookie" = "JSESSIONID=587268CB0D925B0C02FEC7672B1A80FF; Path=/car, mobile=\"R2dGAiQskAmCHjXcF5Txyw==\"; Version=1; Max-Age=1800; Expires=Tue, 23-Apr-2013 03:58:07 GMT; Path=/";
-         }
-
-         */
-        
-
         
     }else{
          NSLog(@"失败");
