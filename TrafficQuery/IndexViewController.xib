@@ -319,9 +319,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="all_bg.png">{640, 813}</string>
-			<string key="top_panal_background.png">{640, 107}</string>
-			<string key="universal_btn_a.png">{110, 61}</string>
+			<string key="all_bg.png">{16, 16}</string>
+			<string key="top_panal_background.png">{16, 16}</string>
+			<string key="universal_btn_a.png">{16, 16}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">1930</string>
 	</data>

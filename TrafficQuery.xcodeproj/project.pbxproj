@@ -725,7 +725,6 @@
 		7BEFD9EA170AD0EA003A6E90 /* CarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfo.h; sourceTree = "<group>"; };
 		7BEFD9EB170AD0EA003A6E90 /* CarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfo.m; sourceTree = "<group>"; };
 		7BEFD9EE170AD115003A6E90 /* CarInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarInfo.xib; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		81FA53E2172BDBC000510020 /* AlixPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlixPay.h; sourceTree = "<group>"; };
 		81FA53E3172BDBC000510020 /* AlixPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlixPay.m; sourceTree = "<group>"; };
 		81FA53E4172BDBC000510020 /* AlixPayOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlixPayOrder.h; sourceTree = "<group>"; };
@@ -1479,7 +1478,6 @@
 			path = brand_images;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		81FA53E1172BDBC000510020 /* Alipay */ = {
 			isa = PBXGroup;
 			children = (
