@@ -525,7 +525,7 @@
     NSCharacterSet *cs;
     NSString * toBeString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     cs = [[NSCharacterSet characterSetWithCharactersInString:NUMBERS] invertedSet];
-    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+   // NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
 //    BOOL basicTest = [string isEqualToString:filtered];
     
     if (carJaField== textField )

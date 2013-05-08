@@ -20,6 +20,7 @@
     int n;
     BOOL isON;
     NSString *loginIsYes;
+    NSString* delSuccess;
     
     LoginViewController* loginViewController;
     NSDictionary* userDic;

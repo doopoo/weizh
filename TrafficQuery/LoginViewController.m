@@ -171,7 +171,7 @@
 //        if([[loginFile objectForKey:@"hasLogin"] isEqualToString:@"NO"]){
         if([CarManager sharedInstance].isLogin == YES){
             NSLog(@"userDict======%@",[userDict objectForKey:flag]);
-            if([[userDict objectForKey:flag] isEqualToString:@"1"]){//付费用户,转场到remindViewController页面
+            if([[userDict objectForKey:@"flag"] isEqualToString:@"1"]){//付费用户,转场到remindViewController页面
                // NSLog(@"userDict======%@",[userDict objectForKey:flag]);
                 remindViewController = [[RemindViewController alloc] initWithNibName:@"RemindViewController" bundle:nil];
                 [self.navigationController pushViewController:remindViewController animated:YES];

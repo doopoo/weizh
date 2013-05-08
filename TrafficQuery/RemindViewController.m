@@ -79,108 +79,11 @@
     }
     
     
-    
-    /*
-    
-    if([[[self.carMutableArray objectAtIndex:m - 100] objectForKey:@"isRemind"] isEqualToString:@"NO"])
-    {//没有被选择
-    	for (int j=0; j<=n; j++)
-        {
-        	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
-        	NSLog(@"~!%@",myBtn1);
 
-            
-            [[self.carMutableArray objectAtIndex:j] setValue:@"NO" forKey:@"isRemind"];
-            NSDictionary* tempDic = [self.carMutableArray objectAtIndex:j];
-            [self.carMutableArray replaceObjectAtIndex:j withObject:tempDic];
-            [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
-            myBtn1.selected = NO;
-        }
-        
-        [myBtn setBackgroundColor:[UIColor clearColor]];
-        
-        [[self.carMutableArray objectAtIndex:m - 100] setValue:@"YES" forKey:@"isRemind"];
-        NSDictionary* tempDic = [self.carMutableArray objectAtIndex:m -100];
-        [self.carMutableArray replaceObjectAtIndex:m - 100 withObject:tempDic];
-        [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
-        
-        [self touchEvent:myBtn];
-        
-
-    	
-    }
-    //这个是原来开着的状态
-    else
-    {
-//        myBtn.selected=NO;
-        [[self.carMutableArray objectAtIndex:m-100] setValue:@"NO" forKey:@"isRemind"];
-        NSDictionary* tempDic = [self.carMutableArray objectAtIndex:m - 100];
-        [self.carMutableArray replaceObjectAtIndex:m - 100 withObject:tempDic];
-        
-        [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
-        [self touchEvent:myBtn];
-    }*/
 }
 //这里面进行逻辑判断
 -(void)touchEvent:(id)sender{
     
-    
-//-    UIButton* button = (UIButton*)sender;
-//-    button.selected = !button.selected;
-    //如果没有登陆，就进入登陆页面
-//    if([[CarManager sharedInstance] getUserName] != nil && [[CarManager sharedInstance] getPwd] != nil){
-    /*
-    NSFileManager* userFile = [NSFileManager defaultManager];
-    if(![userFile fileExistsAtPath:USERFILEPATH]){
-        [userFile createFileAtPath:USERFILEPATH contents:nil attributes:nil];
-    }
-    userDic = [[NSDictionary alloc] initWithContentsOfFile:USERFILEPATH];
-    if([userDic objectForKey:@"userID"] != nil){//如果为空的话，说明没有login过
-        NSString* name = [[CarManager sharedInstance] getUserName];
-        NSString* pwd = [[CarManager sharedInstance] getPwd];
-        NSString* urlString = [NSString stringWithFormat:@"http://www.chexingle.com:8080/car/signIn/"];
-        ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-        [requestForm setPostValue:name forKey:@"mobile"];
-        [requestForm setPostValue:pwd forKey:@"pwd"];
-        [requestForm setDelegate:self];
-        [requestForm setDidFailSelector:@selector(requestFailed:)];
-        [requestForm setDidFinishSelector:@selector(requestLogin:)];
-        [requestForm startAsynchronous];
-
-//        UIButton* button = (UIButton*)sender;
-//        button.selected = !button.selected;
-    }else{
-        NSUserDefaults* loginFile = [NSUserDefaults standardUserDefaults];
-        [loginFile removeObjectForKey:@"hasLogin"];
-        [loginFile setObject:@"NO" forKey:@"hasLogin"];
-        
-        loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        [self.navigationController pushViewController:loginViewController animated:YES];
-    }*/
-    
-    /*
-    
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogin"]){
-        NSString* name = [[CarManager sharedInstance] getUserName];
-        NSString* pwd = [[CarManager sharedInstance] getPwd];
-        NSString* urlString = [NSString stringWithFormat:@"http://www.chexingle.com:8080/car/signIn/"];
-        ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-        [requestForm setPostValue:name forKey:@"mobile"];
-        [requestForm setPostValue:pwd forKey:@"pwd"];
-        [requestForm setDelegate:self];
-        [requestForm startSynchronous];
-    }else{
-    NSString* name = [[CarManager sharedInstance] getUserName];
-    NSString* pwd = [[CarManager sharedInstance] getPwd];
-    NSString* urlString = [NSString stringWithFormat:@"http://www.chexingle.com:8080/car/signIn/"];
-    ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-    [requestForm setPostValue:name forKey:@"mobile"];
-    [requestForm setPostValue:pwd forKey:@"pwd"];
-    [requestForm setDelegate:self];
-    [requestForm setDidFailSelector:@selector(requestFailed:)];
-    [requestForm setDidFinishSelector:@selector(requestLogin:)];
-    [requestForm startAsynchronous];
-    }*/
     
 }
 //已登陆成功
@@ -218,7 +121,7 @@
                 {//不确定是会员，需判断时间
                     //这个自己再写
                     NSLog(@"调用我了");
-                    [self vipAddCar];//这个好你不对
+               //-     [self vipAddCar];//这个好你不对
                 }
             }else if([payType isEqualToString:@"1"])
             {//支付宝付费
@@ -337,18 +240,24 @@
         {
         	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
         	NSLog(@"~!%@",myBtn1);
-            
-            
-            [[self.carMutableArray objectAtIndex:j] setValue:@"NO" forKey:@"isRemind"];
+            NSLog(@"怎么样222");
+            if(j == m - 100){
+                [[self.carMutableArray objectAtIndex:m - 100] setValue:@"YES" forKey:@"isRemind"];
+            }else{
+                [[self.carMutableArray objectAtIndex:j] setValue:@"NO" forKey:@"isRemind"];
+            }
             NSDictionary* tempDic = [self.carMutableArray objectAtIndex:j];
             [self.carMutableArray replaceObjectAtIndex:j withObject:tempDic];
             [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
             myBtn1.selected = NO;
         }
         myBtn.selected = YES;
+        
+    
         NSLog(@"调用了myBtn");
     }
 }
+//
 -(void)vipDelCar{
     NSString* AddString = [NSString stringWithFormat:@"http://www.chexingle.com:8080/car/carInfo/findCarByUser/"];
     ASIFormDataRequest* request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:AddString]];
@@ -361,7 +270,7 @@
     NSString* requestStr = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
     NSDictionary* requestDic = [requestStr objectFromJSONString ];
     NSLog(@"requestDic = %@",requestDic);
-    NSLog(@"requestDIc = %d",[[requestDic objectForKey:@"list"] indexOfObject:0]);
+ //-   NSLog(@"requestDIc = %d",[[requestDic objectForKey:@"list"] indexOfObject:0]);
     //  NSString* ucidStr = [requestDic objectForKey:@"list"]
     NSDictionary* listDic = [[requestDic objectForKey:@"list"] objectAtIndex:0 ];
     NSString* ucidStr = [listDic objectForKey:@"ucid"];
@@ -378,10 +287,32 @@
     NSString* ddString = [NSString stringWithFormat:@"http://www.chexingle.com:8080/car/carInfo/findCarByUser/"];
     //    ASIHTTPRequest* request = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:AddString]];
     ASIFormDataRequest* requestnext = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:ddString]];
-    //    [request addRequestHeader:@"User-Agent" value:@"ASIHTTPRequest"];
     [requestnext startSynchronous];
     NSLog(@"requestnext\n%@",[[NSString alloc] initWithData:[requestnext responseData] encoding:NSUTF8StringEncoding]);
-    myBtn.selected = NO;
+    
+    delSuccess=[[[[NSString alloc] initWithData:[delRequest responseData] encoding:NSUTF8StringEncoding] objectFromJSONString] objectForKey:@"message"];
+    NSLog(@"delSuccess = %@", delSuccess);
+    if([delSuccess isEqualToString:@"删除成功"]){
+        //这个地方有问题
+        for (int j=0; j<=n; j++)
+        {
+        	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
+        	NSLog(@"~!%@",myBtn1);
+            NSLog(@"怎么样222");
+//            if(j == m - 100){
+//                [[self.carMutableArray objectAtIndex:m - 100] setValue:@"YES" forKey:@"isRemind"];
+//            }else{
+                [[self.carMutableArray objectAtIndex:j] setValue:@"NO" forKey:@"isRemind"];
+//            }
+            NSDictionary* tempDic = [self.carMutableArray objectAtIndex:j];
+            [self.carMutableArray replaceObjectAtIndex:j withObject:tempDic];
+            [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
+          //-  myBtn1.selected = NO;
+        }
+
+    }
+    
+   //- myBtn.selected = NO;
     
 }
 
@@ -425,7 +356,7 @@
         //tempCarJiaStr = [self.carDictionary objectForKey:@"carJiaNum"];
        
         
-    NSInteger row=[indexPath row];
+        NSInteger row=[indexPath row];
     
         //转成大写 并加上 豫字
         NSLog(@"tempCarNumStr = %@",tempCarNumStr);
@@ -439,7 +370,7 @@
     
         ((remindCell*)cell).remindViewControllerDelegate = self;
         ((remindCell*)cell).kaiguan.tag=row+100;
-   //此处设置单元格状态-----------------------------------------------------------------------------------------------------
+   //此处设置单元格状态,数据需存入数据库-----------------------------------------------------------------------------------------------------
     if([[self.carDictionary objectForKey:@"isRemind"] isEqualToString:@"YES"]){
         ((remindCell*)cell).kaiguan.selected= YES;
     }else{
