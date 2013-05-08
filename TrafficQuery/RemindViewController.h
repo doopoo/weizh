@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "remindCell.h"
+#import "MBProgressHUD.h"
 @class LoginViewController;
 @class IndexViewController;//返回视图
 @class VIPViewController;
+@class ASIFormDataRequest;
 
 
 @interface RemindViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,remindCelldelegate>{
+    MBProgressHUD* HUD;
+    ASIFormDataRequest* requestLogin;
+    NSString* loginStr;
+    
     NSMutableDictionary* carDictionary;//车辆信息
     NSMutableArray* carMutableArray;
     UITableView* mainTableView;

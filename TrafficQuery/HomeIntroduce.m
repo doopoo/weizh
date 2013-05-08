@@ -267,7 +267,7 @@
     carNumberLabel.text = @"车牌号 : 豫";
     carNumberLabel.backgroundColor = [UIColor clearColor];
     carNumberLabel.textColor = [UIColor colorWithRed:55.0/255.0 green:55.0/255.0 blue:55.0/255.0 alpha:1.0];
-    carNumberLabel.font = [UIFont fontWithName:@"华文楷体" size:18];
+    carNumberLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
     
     //    [self.view addSubview:carNumberLabel];
     //    [carNumberLabel release];
@@ -477,7 +477,7 @@
         [tempArr release];
     
     }
-        sleep(4);
+        sleep(8);
     }completionBlock:^{
         carInfoListViewController = [[CarInfoListViewController alloc] initWithNibName:@"CarInfoListViewController" bundle:nil];
        [carInfoListViewController carDataNumber:carNumberField.text carJaNumber:carJaField.text];
@@ -667,52 +667,7 @@ int xContentOffsetLastTime = 0;
         pageControl.currentPage = curPage;
     }
 }
-/*
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
-{
-    
-    NSCharacterSet *cs;
-    NSString * toBeString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    cs = [[NSCharacterSet characterSetWithCharactersInString:NUMBERS] invertedSet];
-    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
-    BOOL basicTest = [string isEqualToString:filtered];
-    
-    if (carJaField== textField )
-    {
-        if ([toBeString length] > 6 ) {
-            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"请输入车驾号后六位" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] autorelease];
-            [alert show];
-            return NO;
-        }
-    }
-    if (carNumberField==textField) {
-        if ([toBeString length] > 6) {
-            UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"请输入车牌号" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] autorelease];
-            [alert show];
-            return NO;
-        }
-        
-    }
-    
-    [self parentViewController];
-    return YES;
-}
-*/
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
-
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//	// Do any additional setup after loading the view.
-//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -727,31 +682,5 @@ int xContentOffsetLastTime = 0;
     
     [super dealloc];
 }
-//- (void)scrollIfNeeded:(NSNumber *)yCenterPos {
-//	[UIView beginAnimations:nil context:nil];
-//	[UIView setAnimationDuration:0.3];
-//    //loginBg.center = CGPointMake(loginBg.center.x, [yCenterPos floatValue]);
-//    homeBgView.center = CGPointMake(homeBgView.center.x, [yCenterPos floatValue]);
-//	[UIView commitAnimations];
-//}
-//-(void)textFieldDidBeginEditing:(UITextField *)textField{
-//    [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:80.0f] waitUntilDone:NO];
-//}
-//
-////改变输入框焦点
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-//    
-//    if(textField == carNumberField)
-//    {
-//        [carNumberField resignFirstResponder];
-//        //[pwdTextField becomeFirstResponder];
-//    }else
-//    {
-//        [carJaField resignFirstResponder];
-//    }
-//    
-//    [self performSelectorOnMainThread:@selector(scrollIfNeeded:) withObject:[NSNumber numberWithFloat:230.0f] waitUntilDone:NO];
-//    return YES;
-//}
 
 @end

@@ -139,9 +139,10 @@
         UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"您所查询的信息有误" message:nil delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
+        /*
         NSMutableArray * carMutableArray = [NSMutableArray arrayWithContentsOfFile:CARLISTFILEPATH];
         [carMutableArray removeLastObject];
-        [carMutableArray writeToFile:CARLISTFILEPATH atomically:YES];
+        [carMutableArray writeToFile:CARLISTFILEPATH atomically:YES];*/
  }
     NSLog(@"%@",[request class]);//JKDictionary
 
