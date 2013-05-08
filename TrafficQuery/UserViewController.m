@@ -58,13 +58,19 @@
                 NSLog(@"调用了2");
                 self.gradeLabel.text = @"VIP会员";
                 self.timeLabel.text = [UserDic objectForKey:@"end"];
-            }else if([[UserDic objectForKey:@"payType"] isEqualToString:@"1"])
+            }/*else if([[UserDic objectForKey:@"payType"] isEqualToString:@"1"])
             {//支付宝付费
                 self.gradeLabel.text = @"VIP会员";
                 self.timeLabel.text = [UserDic objectForKey:@"end"];
-            }
+            }*/
+        }else if([[UserDic objectForKey:@"payType"] isEqualToString:@"1"])
+        {//支付宝付费
+            self.gradeLabel.text = @"VIP会员";
+            self.timeLabel.text = [UserDic objectForKey:@"end"];
         }
-    }else
+    }
+    
+    else
     {
         self.gradeLabel.text = @"免费会员";
         self.timeLabel.text = @"永久";

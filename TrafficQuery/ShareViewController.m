@@ -66,9 +66,8 @@
     [backButton setTitle:@"返回" forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     UILabel *titleLable = [[UILabel alloc]initWithFrame:CGRectMake(110, 3, 140, 40)];
+    [titleLable setFont:[UIFont fontWithName:@"Helvetica-Bold" size:21]];
     [titleLable setBackgroundColor:[UIColor clearColor]];
-    ;
-    [titleLable setFont:[UIFont fontWithName:@"Helvetica-Bold" size:21]] ;
     titleLable.text = @"分享给朋友";
 
  // 腾讯微博初始化
@@ -404,7 +403,7 @@
     
     if([weiboEngine isLoggedIn]&&TCOpen)
     {
-        UIImage *img = [UIImage imageNamed:@"about_logo.jpg"];
+        UIImage *img = [UIImage imageNamed:@"Icon@2x.png"];
         NSData *dataImage = UIImageJPEGRepresentation(img, 1.0);
         [self.weiboEngine postPictureTweetWithFormat:@"json"
                                              content:wbContent.text clientIP:@"10.10.1.38"
@@ -423,7 +422,7 @@
         [sinaweibo requestWithURL:@"statuses/upload.json"
                            params:[NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    wbContent.text, @"status",
-                                   [UIImage imageNamed:@"about_logo.jpg"], @"pic", nil]
+                                   [UIImage imageNamed:@"Icon@2x.png"], @"pic", nil]
                        httpMethod:@"POST"
                          delegate:self];
     }

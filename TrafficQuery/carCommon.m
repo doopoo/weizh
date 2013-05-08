@@ -78,7 +78,7 @@
         ((ModifyCell*)cell).commonDelegate = self;
         cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ic_more_item_middle.png"]];
 
-    cell.selectionStyle=UITableViewCellSelectionStyleGray;
+    
     
     return cell;
     
