@@ -11,6 +11,7 @@
 #import "AlixPayResult.h"
 #import "AlixPay.h"
 #import "DataSigner.h"
+#import "CarManager.h"
 #define USERFILEPATH [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/User.plist"]
 
 
@@ -78,7 +79,10 @@
     AlixPayOrder *order = [[AlixPayOrder alloc] init];
     order.partner = partner;
     order.seller = seller;
-    order.tradeNO = @"123456"; //订单ID（由商家自行制定）
+    //---------------------
+    order.tradeNO = [CarManager sharedInstance].orderId;
+    NSLog(@"tradeNO = %@", [CarManager sharedInstance].orderId);
+    //order.tradeNO = @"123456"; //订单ID（由商家自行制定）
     NSLog(@"-------%@----------", order.tradeNO);
     
     if ([order.tradeNO isEqualToString:@"0"]) {

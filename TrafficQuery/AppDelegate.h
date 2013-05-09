@@ -22,6 +22,7 @@
     enum WXScene _scene;
    
     IndexViewController* indexViewController;
+    NSNumber* count;
 }
 
 @property (retain, nonatomic)IBOutlet UIWindow *window;

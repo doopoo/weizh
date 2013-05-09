@@ -80,6 +80,7 @@ static CarManager* sharedCarsInstance = nil;
     
     carsArr = [[NSMutableArray alloc] init];
     isLogin = NO;
+    orderId = [[NSString alloc] init];
 }
 
 

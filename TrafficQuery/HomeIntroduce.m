@@ -682,5 +682,14 @@ int xContentOffsetLastTime = 0;
     
     [super dealloc];
 }
+#pragma mark -
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	// the user pressed the "Done" button, so dismiss the keyboard
+	[textField resignFirstResponder];
+	return YES;
+}
 
 @end

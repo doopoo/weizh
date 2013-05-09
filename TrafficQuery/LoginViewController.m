@@ -192,7 +192,10 @@
         }
         
     }else{
-         NSLog(@"失败");
+        NSString* errorStr = [dataDic objectForKey:@"message"];
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:errorStr message:nil delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
     }
 }
 - (void)requestFailed:(ASIHTTPRequest *)request

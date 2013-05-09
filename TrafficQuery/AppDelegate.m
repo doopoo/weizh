@@ -10,6 +10,7 @@
 #import "IndexViewController.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "Reachability.h"
 
 @implementation AppDelegate
 @synthesize firstLaunch;
@@ -25,6 +26,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    BOOL isExistenceNetwork;
+    Reachability* r = [Reachability reachabilityWithHostName:@"www.baidu.com"];
+    if([r currentReachabilityStatus] == NotReachable){
+        isExistenceNetwork = FALSE;
+    }
+    if(!isExistenceNetwork){
+        UIAlertView* myAlert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"网络连接不存在~~(╯_╰)!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [myAlert show];
+        [myAlert release];
+    }
+    
+    
+    
+    
     //设置并存储判断值，记录程序是否是第一次进入
 
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]){//如果不是第一次
@@ -129,7 +145,7 @@
     
   while([application backgroundTimeRemaining] > 1.0){
     
-        /*
+        
         NSString* urlString = [NSString stringWithFormat:@"http://116.255.238.8:3000/querytraffic"];
         ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
 
@@ -146,36 +162,13 @@
         
         NSString* str = [[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding];
         
-        NSLog(@"str = %@",str);*/
+        NSLog(@"str = %@",str);
         
         
        
         //创建一个本地推送
         UILocalNotification* localNotif = [[UILocalNotification alloc] init];
         if (localNotif){
-            /*
-            NSString* urlString = [NSString stringWithFormat:@"http://116.255.238.8:3000/querytraffic"];
-            ASIFormDataRequest* requestForm = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
-            
-            [requestForm setPostValue:@"2013-02-01" forKey:@"date_s"];
-            [requestForm setPostValue:@"豫AGM979" forKey:@"hphm"];
-            [requestForm setPostValue:@"428163" forKey:@"clsbdh"];
-            [requestForm setPostValue:@"02" forKey:@"hpzl"];
-            [requestForm setPostValue:@"VS" forKey:@"queryid"];
-            // 设定委托，委托自己实现异步请求方法
-            [requestForm setDelegate:self];
-            
-            [requestForm startSynchronous];
-           
-            
-            NSString* str = [[NSString alloc] initWithData:[requestForm responseData] encoding:NSUTF8StringEncoding];
-            
-            NSLog(@"str = %@",str);
-             */
-            
-            
-            
-            
             
             //            NSTimeInterval secondsPerDay = 48*60*60;
             //             NSTimeInterval secondsPerDay = 48*60*60;
@@ -184,16 +177,13 @@
             //设置推送时间
             localNotif.fireDate = ttomorrow;
             
-            
-            
-            
             //设置时区
             localNotif.timeZone = [NSTimeZone defaultTimeZone];
             //设置重复间隔
-            //  [localNotif setRepeatInterval:NSWeekCalendarUnit];
-            [localNotif setRepeatInterval:NSDayCalendarUnit];
+            [localNotif setRepeatInterval:NSWeekCalendarUnit];
+//            [localNotif setRepeatInterval:NSDayCalendarUnit];
             //显示在icon上的红色圈中的数字
-            //-   localNotif.applicationIconBadgeNumber = 1;
+               localNotif.applicationIconBadgeNumber = 1;
             // Notification details
             //内容
 //            localNotif.alertBody = @"河南违章查询!~~(╯_╰)";

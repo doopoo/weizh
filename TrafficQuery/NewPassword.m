@@ -75,6 +75,11 @@
         loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
         [self.navigationController pushViewController:loginViewController animated:YES];
         
+    }else{
+        NSString* errorStr = [dataDic objectForKey:@"message"];
+        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:errorStr message:nil delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
     }
     
 }

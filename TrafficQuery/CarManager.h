@@ -12,10 +12,12 @@
     NSMutableDictionary* carsDic;
 //    NSArray* carsArr;
     NSMutableArray* carsArr;
+    NSString* orderId;
     
 }
 //是否已经登陆
 @property BOOL isLogin;
+@property(nonatomic, retain)NSString* orderId;
 @property(nonatomic, retain)NSMutableDictionary* carsDic;
 //@property(nonatomic, retain)NSArray* carsArr;
 @property(nonatomic, retain)NSMutableArray* carsArr;

@@ -62,6 +62,10 @@
 		7B032A9B1728CAC5005F2E87 /* weifa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B032A9A1728CAC5005F2E87 /* weifa.txt */; };
 		7B04175A1725045F00DE2E6F /* ModifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0417591725045D00DE2E6F /* ModifyCell.m */; };
 		7B04175E172504C100DE2E6F /* ModifyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B04175D172504C000DE2E6F /* ModifyCell.xib */; };
+		7B0A19F3173B2BAE006B8196 /* RemindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0A19F0173B2BAE006B8196 /* RemindViewController.xib */; };
+		7B0A19F4173B2BAE006B8196 /* RemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0A19F1173B2BAE006B8196 /* RemindViewController.m */; };
+		7B1015A0173A3D9C00946FBC /* remindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B10159E173A3D9C00946FBC /* remindCell.m */; };
+		7B1015A1173A3D9C00946FBC /* remindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B10159F173A3D9C00946FBC /* remindCell.xib */; };
 		7B1E6788170ACDBF0061FD4F /* search_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1E6787170ACDBF0061FD4F /* search_btn.png */; };
 		7B236559171E29D5003EE002 /* carCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B236557171E29D5003EE002 /* carCommon.m */; };
 		7B23655A171E29D5003EE002 /* carCommon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B236558171E29D5003EE002 /* carCommon.xib */; };
@@ -130,12 +134,8 @@
 		7B36ED791709271000950D8E /* carNumberBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B36ED761709270F00950D8E /* carNumberBg.png */; };
 		7B36ED7B1709393800950D8E /* prompt.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B36ED7A1709393800950D8E /* prompt.png */; };
 		7B589A69171FD56E00BFF86F /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B589A67171FD56D00BFF86F /* ModifyViewController.m */; };
-		7B98C80A173885D9003E5D3D /* remindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B98C7FF173885D9003E5D3D /* remindCell.m */; };
-		7B98C80B173885D9003E5D3D /* remindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B98C800173885D9003E5D3D /* remindCell.xib */; };
-		7B98C80C173885D9003E5D3D /* RemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B98C802173885D9003E5D3D /* RemindViewController.m */; };
 		7B98C80E173885D9003E5D3D /* UpgradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B98C805173885D9003E5D3D /* UpgradeViewController.m */; };
 		7B98C80F173885D9003E5D3D /* VIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B98C807173885D9003E5D3D /* VIPViewController.m */; };
-		7B98C81417389BB8003E5D3D /* RemindViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B98C81117389BB6003E5D3D /* RemindViewController.xib */; };
 		7B98C81517389BB8003E5D3D /* UpgradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B98C81217389BB6003E5D3D /* UpgradeViewController.xib */; };
 		7B98C81617389BB8003E5D3D /* VIPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B98C81317389BB7003E5D3D /* VIPViewController.xib */; };
 		7B98C81817389BE9003E5D3D /* alipay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B98C81717389BE9003E5D3D /* alipay.png */; };
@@ -319,8 +319,6 @@
 		7BEEAF7D17150C29000CDA9B /* CarInfoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BEEAF7B17150C29000CDA9B /* CarInfoListViewController.xib */; };
 		7BEFD9EC170AD0EA003A6E90 /* CarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFD9EB170AD0EA003A6E90 /* CarInfo.m */; };
 		7BEFD9EF170AD115003A6E90 /* CarInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BEFD9EE170AD115003A6E90 /* CarInfo.xib */; };
-		7BF660F8172C9A31000528E0 /* remindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF660F3172C9A31000528E0 /* remindCell.m */; };
-		7BF660FA172C9A31000528E0 /* RemindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF660F6172C9A31000528E0 /* RemindViewController.m */; };
 		7BF66101172CA759000528E0 /* middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF66100172CA759000528E0 /* middle.png */; };
 		7BF66104172CA883000528E0 /* ModifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BF66103172CA882000528E0 /* ModifyViewController.xib */; };
 		7BF6610C172CE43B000528E0 /* btn_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF6610B172CE439000528E0 /* btn_cell.png */; };
@@ -341,17 +339,6 @@
 		81B7845C173A30B100977D79 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B7844D173A30B100977D79 /* openssl_wrapper.m */; };
 		81B7845D173A30B100977D79 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B7844F173A30B100977D79 /* RSADataSigner.m */; };
 		81B7845E173A30B100977D79 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 81B78451173A30B100977D79 /* RSADataVerifier.m */; };
-		81FA5445172BDBC000510020 /* AlixPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA53E3172BDBC000510020 /* AlixPay.m */; };
-		81FA5446172BDBC000510020 /* AlixPayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA53E5172BDBC000510020 /* AlixPayOrder.m */; };
-		81FA5447172BDBC000510020 /* AlixPayResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA53E7172BDBC000510020 /* AlixPayResult.m */; };
-		81FA5448172BDBC000510020 /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA53E9172BDBC000510020 /* DataSigner.m */; };
-		81FA5449172BDBC000510020 /* DataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA53EB172BDBC000510020 /* DataVerifier.m */; };
-		81FA544C172BDBC000510020 /* base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5439172BDBC000510020 /* base64.m */; };
-		81FA544D172BDBC000510020 /* MD5DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA543C172BDBC000510020 /* MD5DataSigner.m */; };
-		81FA544E172BDBC000510020 /* NSDataEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA543E172BDBC000510020 /* NSDataEx.m */; };
-		81FA544F172BDBC000510020 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5440172BDBC000510020 /* openssl_wrapper.m */; };
-		81FA5450172BDBC000510020 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5442172BDBC000510020 /* RSADataSigner.m */; };
-		81FA5451172BDBC000510020 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5444172BDBC000510020 /* RSADataVerifier.m */; };
 		8448D8171705C785002260AE /* HomeIntroduce.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448D8161705C785002260AE /* HomeIntroduce.xib */; };
 		8448D8491705DFD9002260AE /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448D8471705DFD9002260AE /* CarViewController.m */; };
 		8448D84A1705DFD9002260AE /* CarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8448D8481705DFD9002260AE /* CarViewController.xib */; };
@@ -457,6 +444,12 @@
 		7B0417581725045900DE2E6F /* ModifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyCell.h; sourceTree = "<group>"; };
 		7B0417591725045D00DE2E6F /* ModifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyCell.m; sourceTree = "<group>"; };
 		7B04175D172504C000DE2E6F /* ModifyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyCell.xib; sourceTree = "<group>"; };
+		7B0A19F0173B2BAE006B8196 /* RemindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindViewController.xib; sourceTree = "<group>"; };
+		7B0A19F1173B2BAE006B8196 /* RemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindViewController.m; sourceTree = "<group>"; };
+		7B0A19F2173B2BAE006B8196 /* RemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindViewController.h; sourceTree = "<group>"; };
+		7B10159D173A3D9C00946FBC /* remindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remindCell.h; sourceTree = "<group>"; };
+		7B10159E173A3D9C00946FBC /* remindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remindCell.m; sourceTree = "<group>"; };
+		7B10159F173A3D9C00946FBC /* remindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = remindCell.xib; sourceTree = "<group>"; };
 		7B1E6787170ACDBF0061FD4F /* search_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_btn.png; sourceTree = "<group>"; };
 		7B236556171E29D4003EE002 /* carCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carCommon.h; sourceTree = "<group>"; };
 		7B236557171E29D5003EE002 /* carCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carCommon.m; sourceTree = "<group>"; };
@@ -532,16 +525,10 @@
 		7B36ED7A1709393800950D8E /* prompt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prompt.png; sourceTree = "<group>"; };
 		7B589A66171FD56C00BFF86F /* ModifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyViewController.h; sourceTree = "<group>"; };
 		7B589A67171FD56D00BFF86F /* ModifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyViewController.m; sourceTree = "<group>"; };
-		7B98C7FE173885D9003E5D3D /* remindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remindCell.h; sourceTree = "<group>"; };
-		7B98C7FF173885D9003E5D3D /* remindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remindCell.m; sourceTree = "<group>"; };
-		7B98C800173885D9003E5D3D /* remindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = remindCell.xib; sourceTree = "<group>"; };
-		7B98C801173885D9003E5D3D /* RemindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindViewController.h; sourceTree = "<group>"; };
-		7B98C802173885D9003E5D3D /* RemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindViewController.m; sourceTree = "<group>"; };
 		7B98C804173885D9003E5D3D /* UpgradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeViewController.h; sourceTree = "<group>"; };
 		7B98C805173885D9003E5D3D /* UpgradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeViewController.m; sourceTree = "<group>"; };
 		7B98C806173885D9003E5D3D /* VIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPViewController.h; sourceTree = "<group>"; };
 		7B98C807173885D9003E5D3D /* VIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPViewController.m; sourceTree = "<group>"; };
-		7B98C81117389BB6003E5D3D /* RemindViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindViewController.xib; sourceTree = "<group>"; };
 		7B98C81217389BB6003E5D3D /* UpgradeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpgradeViewController.xib; sourceTree = "<group>"; };
 		7B98C81317389BB7003E5D3D /* VIPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIPViewController.xib; sourceTree = "<group>"; };
 		7B98C81717389BE9003E5D3D /* alipay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alipay.png; sourceTree = "<group>"; };
@@ -754,8 +741,6 @@
 		7BEFD9EA170AD0EA003A6E90 /* CarInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfo.h; sourceTree = "<group>"; };
 		7BEFD9EB170AD0EA003A6E90 /* CarInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfo.m; sourceTree = "<group>"; };
 		7BEFD9EE170AD115003A6E90 /* CarInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarInfo.xib; sourceTree = "<group>"; };
-		7BF660F3172C9A31000528E0 /* remindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = remindCell.m; sourceTree = "<group>"; };
-		7BF660F6172C9A31000528E0 /* RemindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindViewController.m; sourceTree = "<group>"; };
 		7BF66100172CA759000528E0 /* middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle.png; sourceTree = "<group>"; };
 		7BF66103172CA882000528E0 /* ModifyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyViewController.xib; sourceTree = "<group>"; };
 		7BF6610B172CE439000528E0 /* btn_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_cell.png; sourceTree = "<group>"; };
@@ -860,17 +845,6 @@
 		81B7844F173A30B100977D79 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		81B78450173A30B100977D79 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		81B78451173A30B100977D79 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
-		81FA53E3172BDBC000510020 /* AlixPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlixPay.m; sourceTree = "<group>"; };
-		81FA53E5172BDBC000510020 /* AlixPayOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlixPayOrder.m; sourceTree = "<group>"; };
-		81FA53E7172BDBC000510020 /* AlixPayResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlixPayResult.m; sourceTree = "<group>"; };
-		81FA53E9172BDBC000510020 /* DataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSigner.m; sourceTree = "<group>"; };
-		81FA53EB172BDBC000510020 /* DataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataVerifier.m; sourceTree = "<group>"; };
-		81FA5439172BDBC000510020 /* base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = base64.m; sourceTree = "<group>"; };
-		81FA543C172BDBC000510020 /* MD5DataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD5DataSigner.m; sourceTree = "<group>"; };
-		81FA543E172BDBC000510020 /* NSDataEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataEx.m; sourceTree = "<group>"; };
-		81FA5440172BDBC000510020 /* openssl_wrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = openssl_wrapper.m; sourceTree = "<group>"; };
-		81FA5442172BDBC000510020 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
-		81FA5444172BDBC000510020 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
 		8448D8161705C785002260AE /* HomeIntroduce.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeIntroduce.xib; sourceTree = "<group>"; };
 		8448D8461705DFD9002260AE /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
 		8448D8471705DFD9002260AE /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
@@ -1339,12 +1313,12 @@
 		7BD276161702762700A1E40D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7B98C7FE173885D9003E5D3D /* remindCell.h */,
-				7B98C7FF173885D9003E5D3D /* remindCell.m */,
-				7B98C800173885D9003E5D3D /* remindCell.xib */,
-				7B98C801173885D9003E5D3D /* RemindViewController.h */,
-				7B98C802173885D9003E5D3D /* RemindViewController.m */,
-				7B98C81117389BB6003E5D3D /* RemindViewController.xib */,
+				7B0A19F2173B2BAE006B8196 /* RemindViewController.h */,
+				7B0A19F1173B2BAE006B8196 /* RemindViewController.m */,
+				7B0A19F0173B2BAE006B8196 /* RemindViewController.xib */,
+				7B10159D173A3D9C00946FBC /* remindCell.h */,
+				7B10159E173A3D9C00946FBC /* remindCell.m */,
+				7B10159F173A3D9C00946FBC /* remindCell.xib */,
 				7B98C804173885D9003E5D3D /* UpgradeViewController.h */,
 				7B98C805173885D9003E5D3D /* UpgradeViewController.m */,
 				7B98C81217389BB6003E5D3D /* UpgradeViewController.xib */,
@@ -1925,11 +1899,11 @@
 				67FAD18117373B9F00B542E8 /* tencent_3.png in Resources */,
 				67FAD18217373B9F00B542E8 /* weixin.png in Resources */,
 				67FAD1841737404C00B542E8 /* AboutUSViewController.xib in Resources */,
-				7B98C80B173885D9003E5D3D /* remindCell.xib in Resources */,
-				7B98C81417389BB8003E5D3D /* RemindViewController.xib in Resources */,
 				7B98C81517389BB8003E5D3D /* UpgradeViewController.xib in Resources */,
 				7B98C81617389BB8003E5D3D /* VIPViewController.xib in Resources */,
 				7B98C81817389BE9003E5D3D /* alipay.png in Resources */,
+				7B1015A1173A3D9C00946FBC /* remindCell.xib in Resources */,
+				7B0A19F3173B2BAE006B8196 /* RemindViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2007,21 +1981,6 @@
 				7BDA8ECD172A788600F9E2BA /* NewPassword.m in Sources */,
 				7BDA8ECF172A788600F9E2BA /* RegisterViewController.m in Sources */,
 				7BDA8ED1172A788600F9E2BA /* UserViewController.m in Sources */,
-				7BF660F8172C9A31000528E0 /* remindCell.m in Sources */,
-				7BF660FA172C9A31000528E0 /* RemindViewController.m in Sources */,
-				81FA5445172BDBC000510020 /* AlixPay.m in Sources */,
-				81FA5446172BDBC000510020 /* AlixPayOrder.m in Sources */,
-				81FA5447172BDBC000510020 /* AlixPayResult.m in Sources */,
-				81FA5448172BDBC000510020 /* DataSigner.m in Sources */,
-				81FA5449172BDBC000510020 /* DataVerifier.m in Sources */,
-				81FA544C172BDBC000510020 /* base64.m in Sources */,
-				81FA544D172BDBC000510020 /* MD5DataSigner.m in Sources */,
-				81FA544E172BDBC000510020 /* NSDataEx.m in Sources */,
-				81FA544F172BDBC000510020 /* openssl_wrapper.m in Sources */,
-				81FA5450172BDBC000510020 /* RSADataSigner.m in Sources */,
-				81FA5451172BDBC000510020 /* RSADataVerifier.m in Sources */,
-				7B98C80A173885D9003E5D3D /* remindCell.m in Sources */,
-				7B98C80C173885D9003E5D3D /* RemindViewController.m in Sources */,
 				7B98C80E173885D9003E5D3D /* UpgradeViewController.m in Sources */,
 				7B98C80F173885D9003E5D3D /* VIPViewController.m in Sources */,
 				81B78452173A30B100977D79 /* AlixPay.m in Sources */,
@@ -2035,6 +1994,8 @@
 				81B7845C173A30B100977D79 /* openssl_wrapper.m in Sources */,
 				81B7845D173A30B100977D79 /* RSADataSigner.m in Sources */,
 				81B7845E173A30B100977D79 /* RSADataVerifier.m in Sources */,
+				7B1015A0173A3D9C00946FBC /* remindCell.m in Sources */,
+				7B0A19F4173B2BAE006B8196 /* RemindViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
