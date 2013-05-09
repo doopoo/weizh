@@ -208,13 +208,11 @@
 //    [CarManager sharedInstance].orderId = [[[[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] objectFromJSONString] objectForKey:@"data"]objectForKey:@"orderId"];
 //    NSLog(@"orderId ============%@",[[[[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] objectFromJSONString] objectForKey:@"data"]objectForKey:@"orderId"]);
     if([loginIsYes isEqualToString:@"绑定成功"]){
-        NSLog(@"怎么样");
+    
         //这个地方有问题
         for (int j=0; j<=n; j++)
         {
-        	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
-        	NSLog(@"~!%@",myBtn1);
-            NSLog(@"怎么样222");
+        	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];;
             if(j == m - 100){
                 [[self.carMutableArray objectAtIndex:m - 100] setValue:@"YES" forKey:@"isRemind"];
             }else{
@@ -287,8 +285,6 @@
         for (int j=0; j<=n; j++)
         {
         	UIButton* myBtn1 = (UIButton*)[[[[myBtn superview] superview]superview] viewWithTag:j+100];
-        	NSLog(@"~!%@",myBtn1);
-            NSLog(@"怎么样222");
 //            if(j == m - 100){
 //                [[self.carMutableArray objectAtIndex:m - 100] setValue:@"YES" forKey:@"isRemind"];
 //            }else{
@@ -351,12 +347,11 @@
         NSDictionary* tempDic = [self.carMutableArray objectAtIndex:i];
         NSString* tempBrand = [[tempDic objectForKey:@"carNum"] uppercaseString];
         if([brandStr isEqualToString:tempBrand]){//如果存在着设置isRemind设置为YES
-            NSLog(@"看看行了没");
+      
             [tempDic setValue:@"YES" forKey:@"isRemind"];
             [self.carMutableArray replaceObjectAtIndex:i withObject:tempDic];
             [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
         }else{
-            NSLog(@"看看行了没222");
             [tempDic setValue:@"NO" forKey:@"isRemind"];
             [self.carMutableArray replaceObjectAtIndex:i withObject:tempDic];
             [self.carMutableArray writeToFile:CARLISTFILEPATH atomically:NO];
@@ -368,7 +363,6 @@
     
     NSLog(@"fffflag = %@",[[userDic objectForKey:@"flag"] class]);
     if(![userDic objectForKey:@"flag"]){
-        NSLog(@"HELLO");
         int carCount = [self.carMutableArray count];
         for(int i = 0; i < carCount; i++){
             NSDictionary* tempDic = [self.carMutableArray objectAtIndex:i];
@@ -428,7 +422,6 @@
         //        [requestForm startAsynchronous];
         //[requestLogin startSynchronous];
             }else{//如果为空，就转到login
-        NSLog(@"noVip在此222");
         NSUserDefaults* loginFile = [NSUserDefaults standardUserDefaults];
         [loginFile removeObjectForKey:@"hasLogin"];
         [loginFile setObject:@"NO" forKey:@"hasLogin"];
